@@ -130,6 +130,24 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.p-fv-info__inner {
+  position: relative;
+  width: 100%;
+}
+.p-fv-info__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background-color: #2E59A7;
+  color: #fff;
+  font-weight: bold;
+  font-size: min(16px, calc(16 / 1440 * 100vw));
+  line-height: 1.4;
+  padding: min(6px, calc(6 / 1440 * 100vw)) min(16px, calc(16 / 1440 * 100vw));
+  border-radius: 100px;
+  white-space: nowrap;
+}
 .p-fv-info__image {
   padding-top: min(calc(1px * 1440 * (0.043)), 4.3vw);
   padding-bottom: min(calc(1px * 1440 * (0.019)), 1.9vw);
@@ -177,11 +195,16 @@
   .p-fv-info {
     margin-top: min(117px, calc(117 / 750 * 100vw));
   }
+  .p-fv-info__inner {
+    position: relative;
+    left: -1.1vw;
+  }
+  .p-fv-info__badge {
+    display: none;
+  }
   .p-fv-info__image {
     padding-top: min(calc(1px * 750 * (0.086)), 8.6vw);
     padding-bottom: min(calc(1px * 750 * (0.038)), 3.8vw);
-    position: relative;
-    left: -1.1vw;
   }
   .p-fv-speed {
     height: min(255px, calc(255 / 750 * 100vw));

@@ -108,11 +108,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="p-fv-info">
         <div class="l-container">
-          <picture>
-            <source media="(min-width: 751px)" srcset="./img/fv-info.png">
-            <source media="(max-width: 750px)" srcset="./img/fv-info-sp.png">
-            <img class="p-fv-info__image" src="./img/fv-info.png" alt="おすすめのファクタリング会社なら株式会社No.1 最短即日対応、手数料0.5％～" fetchpriority="high" decoding="async">
-          </picture>
+          <div class="p-fv-info__inner">
+            <picture>
+              <source media="(min-width: 751px)" srcset="./img/fv-info.png">
+              <source media="(max-width: 750px)" srcset="./img/fv-info-sp.png">
+              <img class="p-fv-info__image" src="./img/fv-info.png" alt="おすすめのファクタリング会社なら株式会社No.1 最短即日対応、手数料0.5％～" fetchpriority="high" decoding="async">
+            </picture>
+            <p class="p-fv-info__badge">【法人限定】 ファクタリング会社</p>
+          </div>
         </div>          
       </div><!-- .p-fv-info -->
 
