@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* Faster rendering for below-the-fold sections only (no image sizing overrides) */
+.p-features,
+.p-review,
+.p-zisseki,
+.p-faq,
+.p-flow,
+.factoring-lp-integrated-section,
+.company-profile-wrapper,
+.p-contact ~ .c-cta {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}

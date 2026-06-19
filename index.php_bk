@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!--meta name="viewport" content="width=768" /-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>初めてファクタリングをご利用される方へ|ファクタリングなら株式会社No.1</title>
+  <meta name="keywords" content="ファクタリング.資金調達,株式会社No.1,即日対応">
+  <meta name="description" content="初めてファクタリングを利用される方向けのページになります。弊社は業界最低水準の手数料で即日資金調達が可能です。お気軽にお問い合わせください。">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/common.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/body.css?<?php echo time();?>">
+  <link rel="stylesheet" type="text/css" href="assets/css/validationEngine.jquery.css">
+
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/languages/jquery.validationEngine-ja.js"></script>
+  <script src="assets/js/jquery.validationEngine.js"></script>
+
+  <script src="assets/js/common.js"></script>
+  <script src="//statics.a8.net/a8sales/a8sales.js"></script>
+  <script src="//statics.a8.net/a8sales/a8crossDomain.js "></script>
+
+  <script type="text/javascript">
+    //<![CDATA[(function(){vara8c=document.createElement('script'); a8c.type= 'text/javascript'; a8c.async=true; a8c.src='//statics.a8.net/a8call/a8call.js'; vars=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(a8c,s); })();//]]>
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120926825-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120926825-1');
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Ads: 802047183 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-802047183"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-802047183');
+  </script>
+
+  <!-- Event snippet for LP電話発信 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', { 'send_to': 'AW-802047183/wBAJCNzn9Z8BEM-Juf4C', 'event_callback': callback });
+      return false;
+    }
+  </script>
+
+  <!-- Google Code for &#32207;&#21512;&#38651;&#35441;&#30003;&#12375;&#36796;&#12415; Conversion Page
+In your html page, add the snippet and call
+goog_report_conversion when someone clicks on the
+phone number link or button. -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    goog_snippet_vars = function () {
+      var w = window;
+      w.google_conversion_id = 802047183;
+      w.google_conversion_label = "N4NMCMn-nYQBEM-Juf4C";
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function (url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      var opt = new Object();
+      opt.onload_callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      }
+      var conv_handler = window['google_trackConversion'];
+      if (typeof (conv_handler) == 'function') {
+        conv_handler(opt);
+      }
+    }
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const requiredRadio = document.getElementById('che01');
+      const submitButton = document.querySelector('input[type="submit"]');
+      submitButton.disabled = !requiredRadio.checked;
+      function updateSubmitButton() {
+        submitButton.disabled = !requiredRadio.checked;
+      }
+      requiredRadio.addEventListener('change', updateSubmitButton);
+      updateSubmitButton();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="logo">
+          <img src="assets/images/logo_02.png" alt="株式会社NO1">
+        <h1>-ファクタリングなら株式会社No.1-</h1>
+      </div>
+      <div class="contact">
+        <div class="tel">
+          <p style="text-align: center;"><a
+              href="https://sec.tracker.jp/a8-tracking/call.php?pid=s00000020552001&si=call">お電話はこちら</a></p>
+          <p>平日 9:00 ～ 19:00受付</p>
+        </div>
+        <a href="#contact" class="mail">メール申込み ＞＞</a>
+      </div>
+      <div class="contact sp">
+        <a
+          onclick="return gtag_report_conversion('https://sec.tracker.jp/a8-tracking/call.php?pid=s00000020552001&si=call');"><img
+            src="assets/images/icon_tel.svg" alt="tel"></a>
+        <a href="#contact"><img src="assets/images/icon_email.svg"></a>
+      </div>
+    </div>
+  </header>
+  <section class="mv">
+    <div class="wrap">
+      <div class="leftbox">
+        <p class="blue big">ファクタリングなら株式会社No.1</p>
+        <h2>請求書（売掛金）を即日高額買取</h2>
+        <p>お客様満足度No.1のファクタリングサービス</p>
+        <ul class="l-list">
+          <li>・買取手数料<strong>１</strong>％～（業界最安）</li>
+          <li>・最短30分で<strong>即日振込</strong>可能</li>
+          <li>・審査通過率<strong>90</strong>％以上</li>
+          <li>・全国対応、<strong>オンライン完結</strong>可能</li>
+        </ul>
+      </div>
+      <div class="rightbox">
+        <h3>最短30分<br>スピード審査必要書類</h3>
+        <ul>
+          <li>決算書</li>
+          <li>請求書</li>
+          <li>通帳コピー</li>
+        </ul>
+        <p class="btn"><a href="#contact">今すぐ審査開始 ＞＞</a></p>
+      </div>
+
+      <p class="clear bannur">
+        <img src="assets/images/top_mv_pic02.png" alt="No.1">
+        <img src="assets/images/top_mv_pic.png" alt="No.1">
+      </p>
+    </div>
+    <div class="bgblue">
+      <div class="wrap">
+        <p>【法人様買取強化中】初めてNo.1のファクタリングをご利用の法人様限定（他社からの乗り換えもＯＫ）</p>
+        <p><strong>「初回買取手数料50％割引」or<br class="sp">「他社より高額買取保証」</strong><br class="sp"><span>※詳しくはお問い合わせ下さい。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="title">お問い合わせ・お申込みフォーム</h2>
+      <p class="subtitle">Contact</p>
+      <p class="big">下記フォームを入力後担当者からご連絡させていただきます。</p>
+      <form id="form01" method="post" class="wrap" action="mail.php">
+        <input type="hidden" id="token" name="token" value="">
+        <ul class="form-list">
+          <li>
+            <div><span>必須</span><span>区分</span><sapn style="color:red; margin-left:20px;">※No.1は法人に特化したファクタリング会社です。</span></div>
+            <div>
+              <input type="radio" id="syu01" name="区分" value="法人"><label for="syu01">法人</label>
+              <input type="radio" id="syu02" name="区分" value="個人事業主"><label for="syu02">個人事業主</label>
+            </div>
+          </li>
+          <li>
+            <div><span>必須</span><span>50万円以上の確定売掛金を保有している</span></div>
+            <div>
+              <input type="radio" id="che01" name="50万円以上の確定売掛金を保有している" value="50万円以上の確定売掛金を保有している"><label
+                for="che01">50万円以上の確定売掛金を保有している</label>
+            </div>
+          </li>
+          <li>
+            <div><span>必須</span><span>会社名</span></div>
+            <div><input type="text" placeholder="例）株式会社No.1" name="会社名" class="validate[required]" value=""></div>
+          </li>
+          <li>
+            <div><span>必須</span><span>お名前（ご担当者様）</span></div>
+            <div><input type="text" placeholder="例）山田太郎" name="お名前" value="" class="validate[required]"></div>
+          </li>
+          <li>
+            <div><span>必須</span><span>電話番号</span></div>
+            <div><input type="text" placeholder="例）090-XXXX-XXXX" name="携帯電話番号" class="validate[required],custom[phone]"
+                value=""></div>
+          </li>
+          <!-- <li>
+            <div><span class="bg-gray">任意</span><span>固定電話番号</span></div>
+            <div><input type="text" placeholder="例）03-XXXX-XXXX" name="固定電話番号" value=""></div>
+          </li> -->
+          <li>
+            <div><span>必須</span><span>メールアドレス</span></div>
+            <div><input type="text" name="メールアドレス" placeholder="例）sample@xxx.co.jp"
+                class="validate[required,custom[email]]" value=""></div>
+          </li>
+          <li>
+            <div><span class="bg-gray">任意</span><span>自由記入　ご希望などございましたらご記入ください。</span></div>
+            <div><textarea name="自由記入" placeholder="" tabindex="0"></textarea></div>
+          </li>
+        </ul>
+
+        <p class="policy"><a href="https://no1service.co.jp/company/privacy/" target="_blank"
+            style="text-decoration:underline;">プライバシーポリシー</a>に同意された方は下記ボタンをクリックして情報を送信してください</p>
+        <p><input type="submit" name="submit" value="送信"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <h2 class="title">No.1のファクタリングの特徴</h2>
+      <p class="subtitle">Advantage</p>
+      <ul class="feature_list">
+        <li>
+          <h3>買取可能金額</h3>
+          <p><img src="assets/images/icon_001.png" alt="金額"></p>
+          <h4>50万円～1億円</h4>
+          <p>※1億円以上はご相談ください</p>
+        </li>
+
+        <li>
+          <h3>審査</h3>
+          <p><img src="assets/images/icon_002.png" alt="審査"></p>
+          <h4>審査通過率 90％以上</h4>
+          <p>2025年2月現在</p>
+        </li>
+
+        <li>
+          <h3>調達後</h3>
+          <p><img src="assets/images/icon_003.png" alt="相談"></p>
+          <h4>継続的なご利用可能</h4>
+          <p>毎月ご利用可能</p>
+        </li>
+
+        <li>
+          <h3>振込までの時間</h3>
+          <p><img src="assets/images/icon_004.png" alt="時間"></p>
+          <h4>最短30分で振込</h4>
+          <p>スピード審査・スピード契約</p>
+        </li>
+
+        <li>
+          <h3>買取手数料</h3>
+          <p><img src="assets/images/icon_005.png" alt="手数料"></p>
+          <h4>業界最低水準の手数料</h4>
+          <p>1％～15％</p>
+        </li>
+
+        <li>
+          <h3>契約</h3>
+          <p><img src="assets/images/icon_006.png" alt="契約"></p>
+          <h4>オンライン契約可能</h4>
+          <p>全国対応・電子契約可能</p>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="transfer">
+    <div class="wrap">
+      <h2 class="title">他社からの乗り換え満足度No.1</h2>
+      <p class="subtitle">Satisfaction level No.1</p>
+      <ul>
+        <li>
+          <h3>他社でファクタリングをご利用中のお客様、このようなお悩みありませんか？</h3>
+        </li>
+        <li class="box">
+          <div class="huki">
+            買取手数料が高い
+          </div>
+          <div class="huki">
+            スピード感がない
+          </div>
+          <div class="huki">
+            毎回の契約が手間
+          </div>
+        </li>
+        <li>
+          <img src="assets/images/icon_008.png" alt="">
+          <h3>No.1のファクタリングへ乗り換えで一発解決</h3>
+        </li>
+
+        <li class="box">
+          <div class="bxblue">
+            <h4>最低水準の買取手数料</h4>
+            <p>買取手数料1％～15％<br>手数料以外の費用は発生しません。</p>
+          </div>
+          <div class="bxblue">
+            <h4>最短30分振込可能</h4>
+            <p>スピード審査・スピード契約<br>2回目からのご利用で更に早くなる</p>
+          </div>
+          <div class="bxblue">
+            <h4>オンライン契約対応</h4>
+            <p>オンラインツールを使った商談<br>契約が可能。対面不要</p>
+          </div>
+        </li>
+
+      </ul>
+      <div class="read">
+        <p>【無料】乗り換え時のシュミレーション作成致します。</p><span>※詳しくはお問い合せ下さい。</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bgblue conversion">
+    <div class="wrap">
+      <h2>【審査通過率90％以上】【秘密厳守】 <br class="sp">お気軽にお問い合せ下さい。</h2>
+      <div class="inner">
+        <div class="tel">
+          <h3>お電話でのお問い合せ・ご相談</h3>
+          <p class="big"><a
+              onclick="return gtag_report_conversion('https://sec.tracker.jp/a8-tracking/call.php?pid=s00000020552001&si=call');">お電話はこちら</a>
+          </p>
+          <span>受付時間<br>平日 9:00～19:00</span>
+        </div>
+        <a href="#contact" class="btn">
+          メールでのお問い合せ・お申込みはこちら &gt;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="whats">
+    <div class="wrap">
+      <h2 class="title">ファクタリングとは？</h2>
+      <p class="subtitle">Factoring</p>
+      <p class="big">
+        ファクタリングを初めて利用されるお客様へ
+      </p>
+      <p class="txtC">
+        ファクタリングとは、お客様が保有している売掛債権(売掛金)をファクタリング会社がお客様に対して<br>
+        『売掛債権(売掛金)を完全に買取する』事により、お客様に資金を提供するサービスです。<br>
+        もう少し簡単に説明しますと、お客様が保有する売掛債権(売掛金)をファクタリング会社が譲り受け、<br>
+        売掛先企業様の支払サイトの期日前に資金化してお客様にお支払いするサービスです。<br>
+        左下の図が一般的なファクタリング（2社間）のイメージです。
+      </p>
+      <div class="left_box">
+        <img src="assets/images/service_how_img_02.png" alt="ファクタリングとは？">
+        <ul>
+          <li>① 商品やサービスの提供（売掛金発生）</li>
+          <li>② 売掛請求金額の確認</li>
+          <li>③ 売掛確定金額の通知</li>
+          <li class="black">④ ファクタリング契約</li>
+          <li class="black">⑤ 集金代行業務の契約</li>
+          <li class="black">⑥ 売掛金の資金化</li>
+          <li class="green">⑦ 集金代行契約により弊社を代行して売掛金の回収</li>
+          <li>⑧ 代行して回収した売掛金をお引渡し</li>
+        </ul>
+        <p>
+          【ポイント】<br>上記、2社間ファクタリングなら売掛先企業に知られずに調達可能
+        </p>
+      </div>
+      <div class="right_box">
+        <h3>ファクタリングのメリット</h3>
+        <p class="subtitle">Merit</p>
+        <ul>
+          <li><span>メリット1</span><br>
+            担保や保証人が不要</li>
+          <li><span>メリット2</span><br>
+            銀行融資ＮＧでも資金調達が可能</li>
+          <li><span>メリット3</span><br>
+            税金、保険料滞納でも資金調達が可能</li>
+          <li><span>メリット4</span><br>
+            即日スピード資金調達が可能</li>
+          <li><span>メリット5</span><br>
+            信用情報を気にせずに資金調達が可能</li>
+          <li><span>メリット6</span><br>
+            秘密厳守で利用可能</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="performance">
+    <div class="wrap">
+      <h2 class="title">No.1のファクタリング実績</h2>
+      <p class="subtitle">Performance</p>
+      <p class="big">累計8,000件以上の実績の一部紹介</p>
+      <ul>
+        <li>
+          <h3>4,300万円の資金調達に成功（2023年12月）</h3>
+          <p><span>お客様情報</span><br>建設業 東京都品川区 年商16億円</p>
+          <p><span>契約内容</span><br>買取手数料：2.5％　調達までの期間：２日</p>
+        </li>
+
+        <li>
+          <h3>3,550万円の資金調達に成功（2023年12月）</h3>
+          <p><span>お客様情報</span><br>製造業 愛知県名古屋市 年商9憶 他社からの乗り換え</p>
+          <p><span>契約内容</span><br>買取手数料：5.0％　調達までの期間：１日</p>
+        </li>
+
+        <li>
+          <h3>480万円の資金調達に成功（2023年11月）</h3>
+          <p><span>お客様情報</span><br>運送業 大阪府大阪市 年商3億円</p>
+          <p><span>契約内容</span><br>買取手数料：7.0％　調達までの期間：1時間</p>
+        </li>
+
+        <li>
+          <h3>930万円の資金調達に成功（2023年10月）</h3>
+          <p><span>お客様情報</span><br>建設業 福岡県福岡市 年商4億円 他社からの乗り換え</p>
+          <p><span>契約内容</span><br>買取手数料：6.0％　調達までの期間：1日</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="qanda">
+    <div class="wrap">
+      <h2 class="title">よくある質問</h2>
+      <p class="subtitle">Question</p>
+      <dl>
+        <dt>代表者個人の保証や連帯保証人は必要ですか？</dt>
+        <dd>必要ございません。</dd>
+        <dt>取引先(売掛先)が倒産した場合は、どうなるのですか？</dt>
+        <dd>取引先(売掛先)倒産リスクを含めて買取させて頂いております。償還請求権の無いファクタリング（ノンリコース）<br>
+          お客様に保証を求めない契約です。返済義務は発生致しません。<br></dd>
+        <dt>他社でファクタリングを利用しているのですが乗り換えは可能ですか？</dt>
+        <dd>可能です。現在ご利用のところよりも手数料が低い自信がございます。お気軽にお問合せください。<br></dd>
+        <dt>赤字決算でも利用可能ですか？</dt>
+        <dd>問題ございません。</dd>
+        <dt>税金を滞納していても利用可能ですか？</dt>
+        <dd>問題ございません。優先債権が無ければご利用できます。優先債権がある場合はご相談ください。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="wrap">
+      <h2 class="title">サービスご利用の流れ</h2>
+      <p class="subtitle">Flow</p>
+      <p class="big">まずはお気軽にお問い合せ下さい。</p>
+      <p class="clear">&nbsp;</p>
+      <ul>
+        <li><span class="number">1</span>
+          <img src="assets/images/icon_step01.png" alt="step1">
+          <p class="head">ご相談・お申し込み→審査</p>
+          <p>お電話・メール・FAXにてお申し込みいただけます。ファクタリング対象債権の詳細をお伺いし、取引先企業様の審査を行わせていただきます。</p>
+        </li>
+        <li><span class="number">2</span>
+          <img src="assets/images/icon_step02.png" alt="step2">
+          <p class="head">最終確認</p>
+          <p>必要書類をそろえていただき、簡単なヒアリングと弊社担当者による最終確認を行います。</p>
+
+        </li>
+
+        <li><span class="number">3</span>
+          <img src="assets/images/icon_step03.png" alt="step3">
+          <p class="head">ご契約</p>
+          <p>最終確認後、契約時必要書類をそろえていただき、ご契約となります。</p>
+          <p class="indm">※３社間契約の場合：取引先・お客様・弊社の３社でご契約。</p>
+          <p class="indm">※２社間契約の場合：お客様と弊社の２社間でご契約。</p>
+        </li>
+
+        <li><span class="number">4</span>
+          <img src="assets/images/icon_step02.png" alt="step2">
+          <p class="head">資金化実行</p>
+          <p>ご契約完了後、迅速に貴社ご指定の口座へお振込み致します。</p>
+
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="bgblue conversion">
+    <div class="wrap">
+      <h2>【審査通過率90％以上】【秘密厳守】 <br class="sp">お気軽にお問い合せ下さい。</h2>
+      <div class="inner">
+        <div class="tel">
+          <h3>お電話でのお問い合せ・ご相談</h3>
+          <p class="big"><a
+              onclick="return gtag_report_conversion('https://sec.tracker.jp/a8-tracking/call.php?pid=s00000020552001&si=call');">お電話はこちら</a>
+          </p>
+          <span>受付時間<br>平日 9:00～19:00</span>
+        </div>
+        <a href="#contact" class="btn">
+          メールでのお問い合せ・お申込みはこちら &gt;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="page-top"><img src="assets/images/icon_up.svg" alt="to top"></div>
+  <footer>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a href="https://no1service.co.jp/company/">会社案内</a></li>
+        </ul>
+      </nav>
+      <p class="copy">c No.1, Inc. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="//lib-3pas.admatrix.jp/3pas/js/AdMatrixAnalyze.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      var p = (("https:" == document.location.protocol) ? "https://" : "http://"), r = Math.round(Math.random() * 10000000), rf = window.top.location.href, prf = window.top.document.referrer, i = AdMatrix.CookieUtil.sharedId();
+
+      var elm = document.createElement('div');
+      elm.innerHTML = unescape('%3C') + 'img src="' + p + 'acq-3pas.admatrix.jp/if/5/01/7a7ba408499dd228edb901d67a9b4752.fs?cb=' + encodeURIComponent(r) + '&rf=' + encodeURIComponent(rf) + '&prf=' + encodeURIComponent(prf) + '&i=' + encodeURIComponent(i) + '" alt=""  style="display:block; margin:0; padding:0; border:0; outline:0; width:0; height:0; line-height:0;" ' + unescape('%2F%3E');
+      document.body.appendChild(elm);
+    })();
+  </script>
+  <noscript><img src="//acq-3pas.admatrix.jp/if/6/01/7a7ba408499dd228edb901d67a9b4752.fs" alt=""
+      style="display:block; margin:0; padding:0; border:0; outline:0; width:0; height:0; line-height:0;" /></noscript>
+  <script>AdMatrix.analyze('7a7ba408499dd228edb901d67a9b4752');</script>
+  <script>AdMatrix.croRequest('7a7ba408499dd228edb901d67a9b4752');</script>
+  <!-- Yahoo Code for your Target List -->
+  <script type="text/javascript" language="javascript">
+    /* <![CDATA[ */
+    var yahoo_retargeting_id = '4H56SX8TIV';
+    var yahoo_retargeting_label = '';
+    var yahoo_retargeting_page_type = '';
+    var yahoo_retargeting_items = [{ item_id: '', category_id: '', price: '', quantity: '' }];
+    /* ]]> */
+  </script>
+  <script type="text/javascript" language="javascript" src="https://b92.yahoo.co.jp/js/s_retargeting.js"></script>
+</body>
+
+</html>

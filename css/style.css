@@ -1,0 +1,645 @@
+@charset "UTF-8";
+/*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/* Reset box-model and set borders */
+/* ============================================ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+  min-width: 0;
+}
+
+/* Document */
+/* ============================================ */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Remove gray overlay on links for iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-tap-highlight-color: transparent; /* 3*/
+}
+
+/* Sections */
+/* ============================================ */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/* Vertical rhythm */
+/* ============================================ */
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+  margin: 0;
+}
+
+/* Headings */
+/* ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* Lists (enumeration) */
+/* ============================================ */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Lists (definition) */
+/* ============================================ */
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* Grouping content */
+/* ============================================ */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+  border-top-width: 1px;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
+}
+
+address {
+  font-style: inherit;
+}
+
+/* Text-level semantics */
+/* ============================================ */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Replaced content */
+/* ============================================ */
+/**
+ * Prevent vertical alignment issues.
+ */
+svg,
+img,
+embed,
+object,
+iframe {
+  vertical-align: bottom;
+}
+
+/* Forms */
+/* ============================================ */
+/**
+ * Reset form fields to make them styleable.
+ * 1. Make form elements stylable across systems iOS especially.
+ * 2. Inherit text-transform from parent.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none; /* 1 */
+  appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: inherit;
+  text-transform: inherit; /* 2 */
+}
+
+/**
+ * Correct cursors for clickable elements.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  cursor: pointer;
+}
+
+button:disabled,
+[type=button]:disabled,
+[type=reset]:disabled,
+[type=submit]:disabled {
+  cursor: default;
+}
+
+/**
+ * Improve outlines for Firefox and unify style with input elements & buttons.
+ */
+:-moz-focusring {
+  outline: auto;
+}
+
+select:disabled {
+  opacity: inherit;
+}
+
+/**
+ * Remove padding
+ */
+option {
+  padding: 0;
+}
+
+/**
+ * Reset to invisible
+ */
+fieldset {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the outline style in Safari.
+ */
+[type=search] {
+  outline-offset: -2px; /* 1 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Fix font inheritance.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Fix appearance for Firefox
+ */
+[type=number] {
+  -moz-appearance: textfield;
+}
+
+/**
+ * Clickable labels
+ */
+label[for] {
+  cursor: pointer;
+}
+
+/* Interactive */
+/* ============================================ */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/*
+ * Remove outline for editable content.
+ */
+[contenteditable]:focus {
+  outline: auto;
+}
+
+/* Tables */
+/* ============================================ */
+/**
+1. Correct table border color inheritance in all Chrome and Safari.
+*/
+table {
+  border-color: inherit; /* 1 */
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: top;
+  padding: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1;
+}
+
+body {
+  color: #3B3B40;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: min(16px, calc(16 / 1440 * 100vw));
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none !important;
+}
+
+@media (max-width: 750px) {
+  body {
+    font-size: min(18px, calc(18 / 750 * 100vw));
+  }
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+  }
+}
+/* * * Layout * * */
+/* * レイアウトBOX * */
+.l-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.l-inner {
+  padding: 0 min(80px, calc(80 / 1440 * 100vw));
+}
+
+@media (max-width: 750px) {
+  .l-container {
+    max-width: none;
+    padding: 0 30px;
+  }
+  .l-inner {
+    padding: 0 min(20px, calc(20 / 750 * 100vw));
+  }
+}
+/* * レイアウトBOX /E * */
+/* * * Layout /E * * */
+/* * * Component * * */
+.c-section-title__text--en, .c-section-title__text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-section-title__text {
+  font-size: min(40px, calc(40 / 1440 * 100vw));
+}
+.c-section-title__text span {
+  display: inline;
+}
+.c-section-title__text--en {
+  font-size: min(24px, calc(24 / 1440 * 100vw));
+  letter-spacing: 0.05em;
+  color: #C69C34;
+  margin-bottom: min(calc(1px * 1440 * (0.016)), 1.6vw);
+}
+
+@media (max-width: 750px) {
+  .c-section-title__text {
+    font-size: min(40px, calc(40 / 750 * 100vw));
+    line-height: 1.25em;
+  }
+  .c-section-title__text--en {
+    font-size: min(24px, calc(24 / 750 * 100vw));
+  }
+}
+.c-cta {
+  background-color: #0D2E63;
+  padding-top: min(calc(1px * 1440 * (0.03)), 3vw);
+  padding-bottom: min(calc(1px * 1440 * (0.054)), 5.4vw);
+}
+
+.c-cta-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-cta-head__title {
+  font-size: min(40px, calc(40 / 1440 * 100vw));
+  font-weight: bold;
+  color: #fff;
+}
+.c-cta-head__title .large {
+  font-size: min(48px, calc(48 / 1440 * 100vw));
+}
+.c-cta-head__catch {
+  font-weight: bold;
+  color: #fff;
+  border: min(1px, calc(1 / 1440 * 100vw)) solid #fff;
+  display: inline;
+  padding: min(calc(1px * 1440 * (0.006)), 0.6vw) min(calc(1px * 1440 * (0.014)), 1.4vw);
+}
+
+.c-cta-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: min(38px, calc(38 / 1440 * 100vw));
+  margin-top: min(calc(1px * 1440 * (0.031)), 3.1vw);
+}
+.c-cta-info-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: min(80px, calc(80 / 1440 * 100vw));
+}
+.c-cta-info-btn--tel {
+  background-color: #fff;
+  border: min(2px, calc(2 / 1440 * 100vw)) solid #996D00;
+  border-radius: 100px;
+  position: relative;
+}
+.c-cta-info-btn--tel::after {
+  content: "受付時間   平日 9:00～19:00";
+  font-size: min(16px, calc(16 / 1440 * 100vw));
+  font-weight: bold;
+  text-align: center;
+  text-wrap: nowrap;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: -39%;
+  transform: translateX(-50%);
+}
+.c-cta-info-btn--mail {
+  background-color: #C69C34;
+  border-radius: 100px;
+}
+.c-cta-info-btn__icon {
+  width: min(60px, calc(60 / 1440 * 100vw));
+}
+.c-cta-info-btn__icon--mail {
+  width: min(44px, calc(44 / 1440 * 100vw));
+}
+.c-cta-info-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-cta-info-btn-text__text {
+  font-weight: bold;
+  text-align: center;
+  margin: 0 min(32px, calc(32 / 1440 * 100vw));
+  line-height: 1.5em;
+  color: #996D00;
+}
+.c-cta-info-btn-text__text .large {
+  font-size: min(24px, calc(24 / 1440 * 100vw));
+}
+.c-cta-info-btn-text__text--mail {
+  color: #fff;
+}
+.c-cta-info-btn__arrow {
+  width: min(11px, calc(11 / 1440 * 100vw));
+}
+
+@media (max-width: 750px) {
+  .c-cta {
+    padding: 12vw 0;
+  }
+  .c-cta-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .c-cta-head__title {
+    font-size: min(38px, calc(38 / 750 * 100vw));
+    text-wrap: nowrap;
+  }
+  .c-cta-head__title .large {
+    font-size: min(46px, calc(46 / 750 * 100vw));
+  }
+  .c-cta-head__catch {
+    font-size: min(36px, calc(36 / 750 * 100vw));
+    border: min(1px, calc(1 / 750 * 100vw)) solid #fff;
+    margin: 7vw 0;
+    padding: 2vw 6vw;
+  }
+  .c-cta-info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: min(80px, calc(80 / 750 * 100vw));
+    width: 100%;
+    margin: 0 auto;
+  }
+  .c-cta-info-btn {
+    height: min(120px, calc(120 / 750 * 100vw));
+  }
+  .c-cta-info-btn--tel {
+    border: min(2px, calc(2 / 750 * 100vw)) solid #996D00;
+  }
+  .c-cta-info-btn--tel::after {
+    font-size: min(24px, calc(24 / 750 * 100vw));
+  }
+  .c-cta-info-btn__icon {
+    width: min(90px, calc(90 / 750 * 100vw));
+  }
+  .c-cta-info-btn__icon--mail {
+    width: min(66px, calc(66 / 750 * 100vw));
+  }
+  .c-cta-info-btn-text__text {
+    font-size: min(27px, calc(27 / 750 * 100vw));
+  }
+  .c-cta-info-btn-text__text .large {
+    font-size: min(36px, calc(36 / 750 * 100vw));
+  }
+  .c-cta-info-btn__arrow {
+    width: min(22px, calc(22 / 750 * 100vw));
+  }
+}
+/* * * Component /E * * */
+/* * * Utility * * */
+.u-font-sub {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.u-font-weight-bold {
+  font-weight: bold;
+}
+
+.u-color-main {
+  color: #2854AD;
+}
+
+.u-color-sub {
+  color: #C69C34;
+}
+
+.u-color-green {
+  color: #55880F;
+}
+
+.u-marker {
+  background: linear-gradient(transparent 40%, #FFE552 40%);
+}
+
+.u-height-100 {
+  height: 100%;
+}
+
+/* * * Utility /E * * */
