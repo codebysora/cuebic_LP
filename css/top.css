@@ -192,6 +192,20 @@
     1px 1px 0 #fff;
   white-space: nowrap;
 }
+.p-fv-info__catch {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: bold;
+  font-size: min(16px, calc(16 / 1440 * 100vw));
+  color: #181818;
+  line-height: 1.4;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
 .p-fv-info__note {
   position: absolute;
   bottom: 10px;
@@ -279,6 +293,16 @@
   }
   .p-fv-info__points {
     display: none;
+  }
+  .p-fv-info__catch {
+    display: block;
+    bottom: min(62px, calc(62 / 750 * 100vw));
+    left: 50%;
+    right: auto;
+    font-size: min(16px, calc(16 / 750 * 100vw));
+    font-weight: bold;
+    color: #1b1b1b;
+    transform: translateX(-50%);
   }
   .p-fv-info__note {
     display: block;

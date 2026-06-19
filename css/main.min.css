@@ -637,6 +637,21 @@ a:hover {
 
   white-space: nowrap;
 }
+.p-fv-info__catch {
+  position: absolute;
+  bottom: min(80px, calc(80 / 1040 * 100vw));
+  right: 3%;
+  z-index: 1;
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: 900;
+  font-size: min(13px, calc(13 / 1440 * 100vw));
+  color: #181818;
+  line-height: 1.4;
+  white-space: nowrap;
+  /* transform: translateX(-50%); */
+  letter-spacing: -0.1em;
+}
 .p-fv-info__note {
   position: absolute;
   bottom: 35px;
@@ -723,6 +738,16 @@ a:hover {
   }
   .p-fv-info__points {
     display: none;
+  }
+  .p-fv-info__catch {
+    display: block;
+    bottom: min(90px, calc(90 / 750 * 100vw));
+    left: 50%;
+    right: auto;
+    font-size: min(16px, calc(16 / 750 * 100vw));
+    font-weight: bold;
+    color: #1b1b1b;
+    transform: translateX(-50%);
   }
   .p-fv-info__note {
     display: block;
