@@ -150,18 +150,60 @@
 }
 .p-fv-info__badge {
   position: absolute;
-  top: 160px;
+  top: 10px;
   left: 10px;
   z-index: 1;
+  display: inline-flex;
+  align-items: flex-end;
   background-color: #2e59a7;
   color: #fff;
   font-weight: bold;
   font-size: min(16px, calc(16 / 1440 * 100vw));
-  line-height: 1.4;
-  padding: min(6px, calc(6 / 1440 * 100vw)) min(16px, calc(16 / 1440 * 100vw));
-  border-radius: 100px;
+  line-height: 1;
+  padding: min(10px, calc(10 / 1440 * 100vw)) min(16px, calc(16 / 1440 * 100vw))
+    min(6px, calc(6 / 1440 * 100vw));
+  border-radius: 10px;
   white-space: nowrap;
-  padding-right: min(calc(1px * 1440 * (0.025)), 2.5vw);
+}
+.p-fv-info__points {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.p-fv-info__points-item {
+  font-family: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: bold;
+  font-size: min(18px, calc(18 / 1440 * 100vw));
+  color: #003366;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: min(3px, calc(3 / 1440 * 100vw));
+  -webkit-text-stroke: 0.5px #fff;
+  paint-order: stroke fill;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  white-space: nowrap;
+}
+.p-fv-info__note {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: bold;
+  font-size: min(11px, calc(11 / 1440 * 100vw));
+  color: #000;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 .p-fv-info__image {
   padding-top: min(calc(1px * 1440 * (0.043)), 4.3vw);
@@ -227,7 +269,25 @@
     left: -1.1vw;
   }
   .p-fv-info__badge {
+    display: inline-flex;
+    top: min(75px, calc(75 / 750 * 100vw));
+    left: 10px;
+    font-size: min(11px, calc(11 / 750 * 100vw));
+    padding: min(4px, calc(4 / 750 * 100vw)) min(10px, calc(10 / 750 * 100vw))
+      min(3px, calc(3 / 750 * 100vw));
+    border-radius: 100px;
+  }
+  .p-fv-info__points {
     display: none;
+  }
+  .p-fv-info__note {
+    display: block;
+    bottom: min(38px, calc(38 / 750 * 100vw));
+    left: 10px;
+    right: auto;
+    font-size: min(10px, calc(10 / 750 * 100vw));
+    font-weight: bold;
+    color: #000;
   }
   .p-fv-info__image {
     padding-top: min(calc(1px * 750 * (0.086)), 8.6vw);

@@ -115,6 +115,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <img class="p-fv-info__image" src="./img/fv-info.png" alt="おすすめのファクタリング会社なら株式会社No.1 最短即日対応、手数料0.5％～" fetchpriority="high" decoding="async">
             </picture>
             <p class="p-fv-info__badge">【法人限定】 ファクタリング会社</p>
+            <ul class="p-fv-info__points">
+              <li class="p-fv-info__points-item">・柔軟なスピード審査対応</li>
+              <li class="p-fv-info__points-item">・他社利用中でもご相談可能</li>
+            </ul>
+            <p class="p-fv-info__note">※ 買取金額 50 万円以上からとさせて頂いております。</p>
           </div>
         </div>          
       </div><!-- .p-fv-info -->
