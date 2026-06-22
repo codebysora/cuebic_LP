@@ -82,7 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <source media="(max-width: 750px)" srcset="./img/fv-info-sp.png">
               <img class="p-fv-info__image" src="./img/fv-info.png" alt="ファクタリング即日なら株式会社No.1 最短即日対応、手数料0.5％～ 素早い即日対応が可能" fetchpriority="high" decoding="async">
             </picture>
-            <p class="p-fv-info__badge">【法人限定】 ファクタリング会社</p>
+            <p class="p-fv-info__badge">【法人限定】即日ファクタリング</p>
             <ul class="p-fv-info__points">
               <li class="p-fv-info__points-item">・柔軟なスピード審査対応</li>
               <li class="p-fv-info__points-item">・他社利用中でもご相談可能</li>
