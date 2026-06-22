@@ -97,12 +97,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <source media="(max-width: 750px)" srcset="./img/fv-info-sp.png" >
               <img class="p-fv-info__image" src="./img/fv-info.png" alt="FV">
             </picture>
-            <p class="p-fv-info__badge">【法人限定】 ファクタリング会社</p>
+            <p class="p-fv-info__badge">【法人限定】即日ファクタリング</p>
             <ul class="p-fv-info__points">
               <li class="p-fv-info__points-item">・柔軟なスピード審査対応</li>
               <li class="p-fv-info__points-item">・他社利用中でもご相談可能</li>
             </ul>
-            <p class="p-fv-info__catch">初めてNo.1のファクタリングをご利用の法人様限定(他社からの乗り換えもOK)</p>
+            <h2 class="p-fv-info__catch">初めてNo.1のファクタリングをご利用の法人様限定(他社からの乗り換えもOK)</h2>
             <p class="p-fv-info__note">※ 買取金額 50 万円以上からとさせて頂いております。</p>
           </div>
         </div>          
