@@ -1,0 +1,14 @@
+.c-section-title__text--en, .c-section-title__text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-section-title__text {
+  font-size: min(40px, calc(40 / 1440 * 100vw));
+}
+.c-section-title__text--en {
+  font-size: min(24px, calc(24 / 1440 * 100vw));
+  letter-spacing: 0.05em;
+  color: #C69C34;
+  margin-bottom: min(calc(1px * 1440 * (0.016)), 1.6vw);
+}

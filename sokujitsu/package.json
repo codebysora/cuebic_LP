@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "build:css": "npx clean-css-cli -o css/style.min.css css/style.css && npx clean-css-cli -o css/top.min.css css/top.css && node -e \"const fs=require('fs');fs.writeFileSync('css/site.min.css',[fs.readFileSync('css/style.min.css','utf8'),fs.readFileSync('css/top.min.css','utf8')].join(''))\""
+  }
+}
