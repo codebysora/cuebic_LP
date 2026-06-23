@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ファクポート｜請求書買取・ファクタリング</title>
+<style>
+:root {
+  --g50:#E8F5E2; --g100:#C4E6B5; --g200:#C0DD97; --g300:#9FD468; --g400:#52A82B; --g500:#3D8A1E; --g600:#2F6E14;
+  --gray50:#F8F8F6; --gray100:#EFEFEB; --gray300:#C5C4BE; --gray500:#888780;
+  --gray700:#444441; --gray900:#1A1A18; --white:#fff;
+  --r:8px; --rl:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;
+  background:var(--white);color:var(--gray900);line-height:1.7;font-size:16px;
+  position:relative;
+}
+
+/* 斜め背景パターン */
+
+header,section,footer,.form-card,nav{position:relative;z-index:1;}
+
+/* HEADER */
+header{
+  background:var(--white);border-bottom:1px solid var(--gray100);
+  padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  position:sticky;top:0;z-index:100;
+}
+.logo{font-size:18px;font-weight:900;color:var(--g600);letter-spacing:.04em;}
+.logo-wrap{display:flex;align-items:center;}
+.header-nav{display:flex;align-items:center;gap:16px;flex-wrap:nowrap;white-space:nowrap;}
+.header-nav a{font-size:13px;color:var(--gray700);text-decoration:none;font-weight:500;transition:color .15s;white-space:nowrap;}
+.header-nav a:hover{color:var(--g500);}
+
+/* HERO */
+.hero{
+  background:linear-gradient(150deg,#EFF9E8 0%,#fff 52%);
+  padding:32px 20px 52px;
+}
+.hero-inner{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:start;
+}
+@media(min-width:821px) and (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr 380px;gap:16px;}
+  .hero{padding:24px 16px 40px;}
+  .fc-head{padding:18px 70px 14px 60px;}
+  .fc-head h2{font-size:clamp(13px,1.5vw,16px);padding-right:70px;}
+}
+
+/* LEFT */
+.hero-left{padding-top:12px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--g50);color:var(--g600);
+  border:1px solid var(--g100);border-radius:100px;
+  padding:4px 14px;font-size:11px;font-weight:700;margin-bottom:16px;
+}
+.hero-left h1{
+  font-size:clamp(24px,3vw,40px);font-weight:900;line-height:1.2;
+  color:var(--gray900);margin-bottom:12px;letter-spacing:-.8px;
+}
+.hero-left h1 em{font-style:normal;color:var(--g500);}
+.hero-left p{font-size:14px;color:var(--gray500);line-height:1.8;margin-bottom:24px;}
+.stats-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.stat{
+  background:var(--white);border:1.5px solid var(--g100);
+  border-radius:var(--r);padding:8px 14px;text-align:center;min-width:90px;
+}
+.stat .n{font-size:18px;font-weight:900;color:var(--g500);display:block;line-height:1.1;}
+.stat .l{font-size:10px;color:var(--gray500);margin-top:2px;display:block;}
+
+
+
+/* FORM CARD */
+.form-card{
+  background:var(--white);border-radius:var(--rl);
+  box-shadow:0 12px 48px rgba(82,168,43,.18), 0 4px 16px rgba(0,0,0,.08);
+  border:3px solid var(--g400);
+  overflow:hidden;
+  transform:translateY(-4px);
+  transition:box-shadow .2s;
+}
+@media(min-width:821px){
+  .form-card{
+    box-shadow:0 20px 60px rgba(82,168,43,.2), 0 8px 24px rgba(0,0,0,.1);
+  }
+}
+.fc-head{
+  background:var(--g50);
+  border-bottom:2px solid var(--g100);
+  padding:22px 90px 16px 76px;text-align:center;
+}
+.fc-head .ey{font-size:10px;font-weight:700;color:var(--g500);letter-spacing:.12em;margin-bottom:4px;}
+.fc-head h2{font-size:clamp(14px,1.8vw,20px);font-weight:900;color:var(--g700);margin-bottom:0;line-height:1.35;letter-spacing:-.3px;white-space:nowrap;}
+  .fc-head h2 .sub{display:block;font-size:11px;font-weight:700;color:var(--g500);letter-spacing:.14em;margin-bottom:6px;}
+  .fc-head h2 .em{color:var(--g500);border-bottom:2.5px solid var(--g400);padding-bottom:1px;}
+.fc-stats{display:flex;gap:6px;justify-content:center;flex-wrap:nowrap;margin-top:12px;}
+.fcs{
+  background:var(--white);border:1.5px solid var(--g100);
+  border-radius:var(--r);padding:5px 8px;text-align:center;min-width:0;flex:1;
+}
+.fcs .fn{font-size:13px;font-weight:900;color:var(--g500);display:block;line-height:1;}
+.fcs .fl{font-size:9px;color:var(--gray500);margin-top:2px;display:block;}
+.fc-body{padding:22px 24px 26px;}
+
+.fr{margin-bottom:12px;}
+.fr label{display:block;font-size:11px;font-weight:700;color:var(--gray700);margin-bottom:4px;}
+.req{display:inline-block;background:var(--g500);color:#fff;font-size:9px;padding:1px 4px;border-radius:3px;margin-left:3px;vertical-align:middle;}
+.opt{display:inline-block;background:var(--gray300);color:#fff;font-size:9px;padding:1px 4px;border-radius:3px;margin-left:3px;vertical-align:middle;}
+.fr input,.fr select,.fr textarea{
+  width:100%;padding:10px 11px;
+  border:1.5px solid var(--gray100);border-radius:var(--r);
+  font-size:14px;font-family:inherit;color:var(--gray900);
+  background:var(--gray50);transition:border-color .15s;
+  -webkit-appearance:none;appearance:none;
+}
+.fr input:focus,.fr select:focus,.fr textarea:focus{
+  outline:none;border-color:var(--g400);background:var(--white);
+}
+.fr select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 9px center;padding-right:28px;
+}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.rg{display:flex;gap:8px;}
+.rg label{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--gray50);border:1.5px solid var(--gray100);
+  border-radius:var(--r);padding:8px 10px;cursor:pointer;
+  font-size:12px;font-weight:600;color:var(--gray700);
+  transition:all .15s;flex:1;margin-bottom:0;
+}
+.rg input[type=radio]{display:none;}
+.rg label:has(input:checked){border-color:var(--g400);background:var(--g50);color:var(--g600);}
+.aw{position:relative;}
+.aw input{padding-right:26px;}
+.aw .u{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--gray500);pointer-events:none;}
+
+.pp-box{
+  background:var(--g50);border:1.5px solid var(--g100);
+  border-radius:var(--r);padding:11px 13px;margin-top:10px;
+  display:flex;align-items:flex-start;gap:9px;
+}
+.pp-box input[type=checkbox]{width:16px;height:16px;min-width:16px;margin-top:2px;accent-color:var(--g500);cursor:pointer;}
+.pp-box p{font-size:11px;color:var(--gray700);line-height:1.65;}
+.pp-box a{color:var(--g500);font-weight:700;text-decoration:underline;cursor:pointer;}
+.sbtn{
+  width:100%;background:var(--g400);color:#fff;border:none;
+  border-radius:100px;padding:15px;font-size:16px;font-weight:900;
+  cursor:pointer;margin-top:14px;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  transition:background .2s,transform .1s;
+  box-shadow:0 4px 16px rgba(82,168,43,.32);
+}
+.sbtn:hover{background:var(--g500);}
+.sbtn:active{transform:scale(.98);}
+.sbtn:disabled{background:var(--gray300);box-shadow:none;cursor:not-allowed;}
+.fnote{font-size:10px;color:var(--gray500);text-align:center;margin-top:8px;line-height:1.5;}
+
+/* FEATURES */
+.feats{padding:56px 20px;max-width:960px;margin:0 auto;}
+.sh{text-align:center;margin-bottom:30px;position:relative;z-index:2;}
+.sh .ey{color:var(--g500);font-size:11px;font-weight:700;letter-spacing:.1em;margin-bottom:8px;}
+.sh h2{font-size:clamp(18px,3vw,26px);font-weight:900;color:var(--gray900);line-height:1.3;}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;position:relative;z-index:2;}
+  @media(min-width:641px) and (max-width:900px){
+    .fg{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:640px){
+    .fg{grid-template-columns:1fr;}
+  }
+.fc2{
+  background:var(--white);border:1.5px solid var(--gray100);
+  border-left:4px solid var(--g400);
+  border-radius:0 var(--rl) var(--rl) 0;
+  padding:20px 16px;transition:border-color .2s,box-shadow .2s;
+}
+.fc2:hover{border-color:var(--g100);box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.fi{width:40px;height:40px;background:var(--g50);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.fc2 h3{font-size:14px;font-weight:800;color:var(--gray900);margin-bottom:5px;}
+.fc2 p{font-size:12px;color:var(--gray500);line-height:1.7;}
+
+/* FLOW */
+.flow{background:var(--g50);padding:56px 20px;}
+.flow-in{max-width:600px;margin:0 auto;}
+.fsteps{display:flex;flex-direction:column;}
+.fstep{display:flex;gap:16px;align-items:flex-start;}
+.fsl{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fnum{width:36px;height:36px;border-radius:50%;background:var(--g400);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+.fline{width:2px;flex:1;min-height:28px;background:var(--g100);margin:3px 0;}
+.fstep:last-child .fline{display:none;}
+.fcon{padding-bottom:24px;padding-top:4px;}
+.fcon h3{font-size:14px;font-weight:800;color:var(--gray900);margin-bottom:3px;}
+.fcon p{font-size:12px;color:var(--gray500);}
+.ftag{display:inline-block;background:var(--g50);color:var(--g600);border-radius:100px;padding:2px 9px;font-size:10px;font-weight:700;margin-bottom:4px;}
+
+/* CTA */
+.cta{background:var(--g50);border-top:3px solid var(--g100);padding:48px 20px;text-align:center;}
+.cta h2{font-size:clamp(18px,3vw,24px);font-weight:900;color:var(--g700);margin-bottom:8px;}
+.cta p{color:var(--gray500);font-size:13px;margin-bottom:20px;}
+.cta a{
+  display:inline-block;background:var(--g500);color:#fff;text-decoration:none;
+  padding:13px 36px;border-radius:100px;font-size:15px;font-weight:900;
+  box-shadow:0 4px 16px rgba(82,168,43,.25);transition:transform .15s;
+}
+.cta a:hover{transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--white);border-top:1px solid var(--gray100);padding:36px 24px 24px;color:var(--gray700);font-size:11px;line-height:1.9;}
+footer a{color:rgba(255,255,255,.75);text-decoration:none;}
+
+/* MODAL */
+
+
+
+
+.modal-head h3{font-size:15px;font-weight:800;color:var(--gray900);}
+.modal-close{background:none;border:none;cursor:pointer;font-size:22px;color:#888;line-height:1;padding:0 4px;}
+.modal-body{padding:20px 24px;overflow-y:auto;font-size:13px;line-height:1.85;color:var(--gray700);}
+.modal-body h4{font-size:13px;font-weight:800;color:var(--gray900);margin:14px 0 5px;}
+.modal-body ul{margin:5px 0 5px 16px;}
+
+/* RESPONSIVE */
+@media(max-width:820px){
+  .hero{padding:12px 14px 24px;}
+  .hero-inner{grid-template-columns:1fr;gap:8px;}
+  .hero-left{display:none;}
+  .f2{grid-template-columns:1fr;gap:0;}
+  .f2 .fr{margin-bottom:12px;}
+  .logo-sub{display:none;}
+}
+@media(max-width:480px){
+  .fc-body{padding:18px 16px 22px;}
+}
+
+  
+  }
+  }
+
+  /* FAQ */
+  .faq-section{background:var(--white);padding:56px 20px;}
+  .faq-in{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--gray100);}
+  .faq-item:first-child{border-top:1px solid var(--gray100);}
+  .faq-q{
+    padding:18px 48px 18px 0;cursor:pointer;position:relative;
+    font-size:14px;font-weight:700;color:var(--gray900);line-height:1.6;
+    display:flex;align-items:flex-start;gap:12px;
+    transition:color .2s;
+  }
+  @media(max-width:820px){
+    .faq-section{padding:48px 20px;}
+    .faq-q{padding:22px 48px 22px 0;font-size:15px;line-height:1.7;}
+    .faq-a-inner{padding:0 8px 24px 26px;font-size:14px;line-height:1.9;}
+  }
+  .faq-q:hover{color:var(--g500);}
+  .faq-q::before{content:'Q.';color:var(--g400);font-weight:900;flex-shrink:0;font-size:13px;margin-top:1px;}
+  .faq-q::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:300;color:var(--g400);transition:transform .3s;}
+  .faq-item.open .faq-q{color:var(--g500);}
+  .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-item.open .faq-a{max-height:400px;}
+  .faq-a-inner{padding:0 8px 20px 26px;font-size:13px;line-height:1.9;color:var(--gray500);}
+
+  /* モーダル改良 */
+  
+  
+  
+  
+  .modal-head h3{font-size:15px;font-weight:800;color:var(--gray900);}
+  
+  
+  .modal-body-scroll h4:first-child{margin-top:0;}
+  
+  
+  
+  
+
+  /* フッターリンク */
+
+
+  /* PC用インラインフロー */
+  .hero-flow{margin-top:24px;padding-top:20px;border-top:1px solid var(--g100);}
+  .hf-title{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--g500);margin-bottom:12px;}
+  .hf-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;position:relative;}
+  .hf-step:not(:last-child)::after{content:'';position:absolute;left:13px;top:26px;width:1px;height:calc(100% - 4px);background:var(--g100);}
+  .hf-num{width:26px;height:26px;border-radius:50%;background:var(--g400);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
+  .hf-body{display:flex;align-items:center;gap:8px;padding-top:3px;flex-wrap:wrap;}
+  .hf-tag{background:var(--g50);color:var(--g600);border-radius:100px;padding:1px 8px;font-size:10px;font-weight:700;}
+  .hf-body strong{font-size:12px;font-weight:800;color:var(--gray900);}
+  .hf-body span{font-size:11px;color:var(--gray500);}
+
+  /* スマホではhero-flowを非表示、flowセクションを表示 */
+  @media(max-width:820px){
+    .hero-flow{display:none;}
+    .flow{display:block !important;}
+    .fc-head{padding:22px 20px 18px;}
+    .fc-head h2{font-size:24px;line-height:1.3;white-space:normal;padding-right:72px;}
+    .fc-deco{display:none;}
+    .fc-head h2 .sub{font-size:13px;margin-bottom:8px;}
+    .fcs{padding:8px 6px;min-width:0;}
+    .fcs .fn{font-size:16px;}
+    .fcs .fl{font-size:10px;}
+    .fc-stats{gap:6px;margin-top:14px;}
+  }
+  /* PCではflowセクションを非表示 */
+  @media(min-width:821px){
+    .flow{display:none;}
+  }
+
+
+  /* PC用インラインフロー */
+  .hero-flow{margin-top:28px;padding-top:22px;border-top:1.5px solid var(--g100);overflow:visible;}
+  .hf-title{
+    display:flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--g500);
+    margin-bottom:16px;
+  }
+  .hf-deco-line{flex:1;height:1px;background:var(--g100);}
+  .hf-steps{display:flex;flex-direction:column;gap:0;overflow:visible;}
+  .hf-step{display:flex;gap:12px;align-items:stretch;}
+  .hf-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:32px;}
+  .hf-circle{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--g400);color:#fff;
+    font-size:13px;font-weight:900;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;position:relative;z-index:1;
+    box-shadow:0 2px 8px rgba(82,168,43,.25);
+  }
+  .hf-circle.final{background:var(--g600);}
+  .hf-connector{width:2px;flex:1;background:var(--g100);margin:2px 0;}
+  .hf-step.last .hf-left{justify-content:flex-start;}
+  .hf-card{
+    background:var(--white);border:1.5px solid var(--g100);border-radius:10px;
+    padding:10px 14px;margin-bottom:8px;flex:1;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    transition:border-color .2s;
+  }
+  .hf-card:hover{border-color:var(--g400);}
+  .hf-card.accent{border-color:var(--g400);background:var(--g50);}
+  .hf-tag{
+    background:var(--g50);color:var(--g600);
+    border-radius:100px;padding:2px 9px;
+    font-size:10px;font-weight:700;white-space:nowrap;
+    border:1px solid var(--g100);
+  }
+  .hf-card strong{font-size:13px;font-weight:800;color:var(--gray900);}
+  .hf-card span{font-size:11px;color:var(--gray500);}
+
+  /* 各セクションに幾何学アクセント */
+  .feats,.faq-section,.cta{position:relative;overflow:hidden;}
+  .feats::before{
+    content:'';position:absolute;top:-40px;right:-40px;
+    width:200px;height:200px;border-radius:50%;
+    border:24px solid var(--g50);pointer-events:none;
+  }
+  .feats::after{
+    content:'';position:absolute;bottom:-30px;left:-30px;
+    width:120px;height:120px;
+    background:var(--g50);
+    clip-path:polygon(50% 0%,100% 100%,0% 100%);
+    pointer-events:none;opacity:.7;
+  }
+  .cta::before{
+    content:'';position:absolute;left:-20px;top:50%;transform:translateY(-50%);
+    width:160px;height:160px;border-radius:50%;
+    border:20px solid rgba(255,255,255,.08);pointer-events:none;
+  }
+  .cta::after{
+    content:'';position:absolute;right:40px;bottom:-30px;
+    width:100px;height:100px;
+    border:2px solid rgba(255,255,255,.1);
+    transform:rotate(15deg);pointer-events:none;
+  }
+
+  /* スマホではhero-flowを非表示 */
+  @media(max-width:820px){
+    .hero-flow{display:none;}
+    .flow{display:block !important;}
+  }
+  /* PCではflowセクションを非表示 */
+  @media(min-width:821px){
+    .flow{display:none;}
+  }
+
+
+  .fc2-illust{
+    display:flex;justify-content:center;margin-bottom:14px;
+  }
+  .fc2-illust svg{
+    width:90px;height:90px;
+    filter:drop-shadow(0 4px 12px rgba(82,168,43,.12));
+  }
+  .fc2{text-align:center;}
+  .fc2 h3{font-size:14px;font-weight:800;color:var(--gray900);margin-bottom:6px;white-space:nowrap;}
+  .fc2 p{font-size:12px;color:var(--gray500);line-height:1.7;text-align:left;}
+
+  /* 吹き出しバッジ */
+  .form-badge{
+    position:absolute;top:-8px;right:-10px;
+    width:110px;height:110px;
+    z-index:20;
+  }
+  .form-badge svg{width:110px;height:110px;overflow:visible;}
+  .form-badge-top{font-size:11px;font-weight:800;fill:#fff;letter-spacing:.02em;}
+  .form-badge-main{font-size:26px;font-weight:900;fill:#fff;letter-spacing:-.5px;}
+  .form-badge-sub{font-size:12px;font-weight:700;fill:rgba(255,255,255,.9);}
+
+
+  .fc-head{position:relative;}
+  .fc-deco{position:absolute;pointer-events:none;opacity:.82;}
+  .fc-deco-left{left:10px;top:50%;transform:translateY(-50%);}
+  .fc-deco-right{right:52px;bottom:4px;}
+  @media(max-width:480px){
+    .fc-deco-left{left:4px;}
+    .fc-deco-right{right:46px;}
+    .fc-deco svg{transform:scale(.85);transform-origin:bottom center;}
+  }
+
+
+  .sp-br{display:none;}
+  @media(max-width:600px){
+    .sp-br{display:block;}
+    .fc-head h2{font-size:22px;}
+  }
+
+
+  .line-badge{display:inline-flex;align-items:center;margin-left:6px;vertical-align:middle;}
+
+
+  .logo-catch{
+    font-size:15px;font-weight:800;color:var(--gray900);
+    margin-left:14px;letter-spacing:-.3px;white-space:nowrap;
+    padding-left:14px;border-left:1.5px solid var(--gray100);
+  }
+  .logo-catch em{font-style:normal;color:var(--g500);font-size:16px;}
+  @media(max-width:480px){
+    .logo-catch{font-size:12px;margin-left:8px;padding-left:8px;}
+    .logo-catch em{font-size:13px;}
+  }  }
+  @media(max-width:680px) and (min-width:481px){
+    .logo-catch{font-size:11px;margin-left:8px;padding-left:8px;}
+  }
+
+
+  /* ハンバーガー */
+  .hamburger{
+    display:none;flex-direction:column;justify-content:space-between;
+    width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;width:100%;height:2.5px;background:var(--g600);
+    border-radius:2px;transition:all .3s;
+  }
+  .hamburger.open span:nth-child(1){transform:translateY(8.75px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-8.75px) rotate(-45deg);}
+
+  /* ドロワー */
+  .drawer{
+    display:none;position:fixed;top:52px;right:0;width:220px;
+    background:var(--white);border-left:1px solid var(--gray100);
+    border-bottom:1px solid var(--gray100);
+    box-shadow:-4px 4px 20px rgba(0,0,0,.1);
+    z-index:99;flex-direction:column;
+    border-radius:0 0 0 12px;
+  }
+  .drawer.open{display:flex;}
+  .drawer-link{
+    padding:16px 24px;font-size:14px;font-weight:600;color:var(--gray700);
+    text-decoration:none;border-bottom:1px solid var(--gray50);
+    transition:background .15s,color .15s;
+  }
+  .drawer-link:hover{background:var(--g50);color:var(--g600);}
+  .drawer-cta{
+    background:var(--g400);color:#fff !important;
+    font-weight:700;text-align:center;border-bottom:none;
+    margin:12px 16px 16px;border-radius:100px;padding:12px 24px;
+  }
+  .drawer-cta:hover{background:var(--g500);}
+  .drawer-overlay{
+    display:none;position:fixed;inset:0;z-index:98;
+  }
+  .drawer-overlay.open{display:block;}
+
+  @media(max-width:820px){
+    .pc-nav{display:none;}
+    .hamburger{display:flex;}
+  }
+  @media(min-width:821px){
+    .hamburger{display:none;}
+    .drawer{display:none !important;}
+  }
+
+
+  .logo-mark-wrap{display:flex;align-items:center;margin-right:4px;flex-shrink:0;}
+  @media(max-width:480px){
+    .logo-mark-wrap svg{width:22px;height:22px;}
+    .logo-catch{font-size:12px;}
+    .logo-catch em{font-size:13px;}
+  }
+
+
+  @media(max-width:820px){
+    .hero-left p[style*="padding-right"]{padding-right:0;}
+    .hero-left p[style*="padding-right"] span[style*="position:absolute"]{display:none;}
+  }
+
+
+
+
+
+  .thanks-inner{padding:48px 28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;}
+  .thanks-icon{margin-bottom:4px;}
+  .thanks-title{font-size:22px;font-weight:900;color:var(--gray900);margin:0;}
+  .thanks-main{font-size:14px;line-height:1.9;color:var(--gray700);max-width:480px;margin:0;}
+  .thanks-note{font-size:12px;line-height:1.8;color:var(--gray500);max-width:480px;margin:0;padding:16px;background:var(--gray50);border-radius:8px;text-align:left;}
+
+  /* 法人様も歓迎バッジ（SP専用） */
+  .hojin-badge{
+    position:absolute;top:10px;right:16px;
+    pointer-events:none;width:80px;height:88px;
+  }
+
+  /* iPad幅でPC版法人バッジを小さく・右外に */
+  @media(max-width:820px){
+    .hojin-badge-pc{display:none;}
+  }
+
+  /* スマホ専用キャッチ見出し（フォームカードの上） */
+  .sp-hero-catch{display:none;}
+  @media(max-width:820px){
+    .sp-hero-catch{
+      display:block;
+      padding:10px 16px 6px;
+      overflow:visible;
+    }
+    .sp-hero-h2{
+      font-size:clamp(20px,6vw,28px);
+      font-weight:900;color:var(--gray900);
+      line-height:1.25;margin-bottom:4px;
+      letter-spacing:-.5px;
+      padding-right:76px;
+    }
+    .sp-hero-h2 em{font-style:normal;color:var(--g500);}
+    .sp-hero-sub{
+      font-size:12px;color:var(--gray500);
+      line-height:1.65;margin-bottom:0;
+    }
+    .sp-hero-sub strong{color:#FF6B2B;font-weight:700;font-size:18px;}
+  }
+
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header>
+  <div class="logo-wrap">
+    <div class="logo-mark-wrap"><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+      <!-- 茎 -->
+      <path d="M14 26 Q14 16 14 12" stroke="#3D8A1E" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <!-- 左葉 -->
+      <path d="M14 16 Q8 14 7 8 Q13 8 14 14" fill="#52A82B"/>
+      <!-- 右葉 -->
+      <path d="M14 13 Q20 10 22 4 Q16 5 14 12" fill="#7DC44A"/>
+      <!-- 茎の曲がり -->
+      <path d="M14 20 Q11 18 9 15" stroke="#3D8A1E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </svg></div>
+    <div class="logo">FACPORT</div>
+    <div class="logo-catch">請求書を<em>即日</em>現金化</div>
+  </div>
+  <!-- PC：通常ナビ -->
+  <nav class="header-nav pc-nav">
+    <a href="#feats-anchor">特徴</a>
+    <a href="#form-anchor">ご利用の流れ</a>
+    <a href="#faq-anchor">よくある質問</a>
+  </nav>
+  <!-- SP：ハンバーガー -->
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<!-- SPドロワー -->
+<div class="drawer" id="drawer">
+  <a href="#feats-anchor" class="drawer-link">特徴</a>
+  <a href="#flow-anchor" class="drawer-link">ご利用の流れ</a>
+  <a href="#faq-anchor" class="drawer-link">よくある質問</a>
+  <a href="#form-anchor" class="drawer-link drawer-cta">無料で申込む</a>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="position:relative;">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-badge" style="margin-bottom:16px;">&#128203; 個人事業主専門 &nbsp;●&nbsp; 完全オンライン &nbsp;●&nbsp; 2社間</div>
+      <h1>請求書を<em>即日</em>現金化<br>難しい手続きは<br>いりません。</h1>
+      <!-- 個人事業主専門POPバナー -->
+      <div style="margin-bottom:12px;">
+        <svg viewBox="0 0 380 68" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;display:block;">
+          <rect x="4" y="6" width="370" height="56" rx="4" fill="#FFE066" transform="rotate(-2.5 190 34)"/>
+          <rect x="8" y="10" width="362" height="48" rx="3" fill="none" stroke="#FF6B2B" stroke-width="3" stroke-dasharray="7 3" transform="rotate(-2.5 190 34)"/>
+          <text x="192" y="43" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="30" font-weight="900" fill="#C44B00" letter-spacing="-1" transform="rotate(-2.5 192 34)">個人事業主専門！</text>
+        </svg>
+      </div>
+      <div style="position:relative;">
+        <p>
+          請求書買取サービス。<br>借入ではないので負債になりません。
+        </p>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><span class="n">即日</span><span class="l">最短入金</span></div>
+        <div class="stat"><span class="n">45日</span><span class="l">以内対象</span></div>
+        <div class="stat"><span class="n">2社間</span><span class="l">通知なし</span></div>
+      </div>
+
+      <!-- PC専用インラインフロー -->
+      <div class="hero-flow">
+        <div class="hf-title">
+          <span class="hf-deco-line"></span>申込から入金までの流れ<span class="hf-deco-line"></span>
+        </div>
+        <div class="hf-steps">
+          <div class="hf-step">
+            <div class="hf-left">
+              <div class="hf-circle">1</div>
+              <div class="hf-connector"></div>
+            </div>
+            <div class="hf-card">
+              <span class="hf-tag">所要1分</span>
+              <strong>オンライン申込み</strong>
+              <span>フォームに入力するだけ</span>
+            </div>
+          </div>
+          <div class="hf-step">
+            <div class="hf-left">
+              <div class="hf-circle">2</div>
+              <div class="hf-connector"></div>
+            </div>
+            <div class="hf-card">
+              <span class="hf-tag">所要5分</span>
+              <strong>請求書とエビデンス（審査資料）のご提出</strong>
+              <span>PDF or スマホで撮影・アップロード</span>
+              <span class="line-badge"><svg viewBox="0 0 96 36" width="96" height="36" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="96" height="36" rx="7" fill="#fff" stroke="#06C755" stroke-width="2.5"/>
+                  <text x="48" y="14" text-anchor="middle" font-size="13" font-weight="900" fill="#06C755" font-family="sans-serif">LINE</text>
+                  <text x="48" y="29" text-anchor="middle" font-size="12" font-weight="800" fill="#06C755" font-family="sans-serif">対応</text>
+                </svg></span>
+            </div>
+          </div>
+          <div class="hf-step">
+            <div class="hf-left">
+              <div class="hf-circle">3</div>
+              <div class="hf-connector"></div>
+            </div>
+            <div class="hf-card">
+              <span class="hf-tag">最短60分</span>
+              <strong>審査・ご提案</strong>
+              <span>融資やカードの審査に落ちたことがあってもご利用可能です。</span>
+            </div>
+          </div>
+          <div class="hf-step last">
+            <div class="hf-left">
+              <div class="hf-circle final">4</div>
+            </div>
+            <div class="hf-card accent">
+              <span class="hf-tag">最短即日</span>
+              <strong>クラウド契約 → ご入金</strong>
+              <span>取引先への通知なし</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PC版法人バッジ：hero-inner基準でh1の右横あたり固定 -->
+    <div class="hojin-badge-pc" style="position:absolute;top:60px;left:calc(460px - 100px);pointer-events:none;width:80px;height:88px;">
+      <svg viewBox="0 0 110 110" width="80" height="88" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <ellipse cx="55" cy="50" rx="52" ry="48" fill="#E07850"/>
+        <polygon points="20,85 8,108 42,90" fill="#E07850"/>
+        <ellipse cx="55" cy="50" rx="46" ry="42" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+        <text x="55" y="38" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="16" font-weight="800" fill="#fff" letter-spacing="0">法人様も</text>
+        <text x="55" y="68" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="22" font-weight="900" fill="#fff" letter-spacing="-1">歓迎</text>
+      </svg>
+    </div>
+
+    <!-- スマホ専用キャッチ見出し（SPのみ表示、フォームの上） -->
+    <div class="sp-hero-catch">
+      <div style="position:relative;">
+        <h2 class="sp-hero-h2">請求書を<em>即日</em>現金化<br>難しい手続きは<br>いりません。</h2>
+        <!-- 法人様も歓迎バッジ -->
+        <div class="hojin-badge">
+          <svg viewBox="0 0 110 110" width="80" height="88" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+            <ellipse cx="55" cy="50" rx="52" ry="48" fill="#E07850"/>
+            <polygon points="20,85 8,108 42,90" fill="#E07850"/>
+            <ellipse cx="55" cy="50" rx="46" ry="42" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+            <text x="55" y="38" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="16" font-weight="800" fill="#fff" letter-spacing="0">法人様も</text>
+            <text x="55" y="68" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="22" font-weight="900" fill="#fff" letter-spacing="-1">歓迎</text>
+          </svg>
+        </div>
+      </div>
+      <!-- 個人事業主専門POPバナー -->
+      <div style="margin-bottom:8px;">
+        <svg viewBox="0 0 380 68" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <rect x="4" y="6" width="370" height="56" rx="4" fill="#FFE066" transform="rotate(-2.5 190 34)"/>
+          <rect x="8" y="10" width="362" height="48" rx="3" fill="none" stroke="#FF6B2B" stroke-width="3" stroke-dasharray="7 3" transform="rotate(-2.5 190 34)"/>
+          <text x="192" y="43" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="30" font-weight="900" fill="#C44B00" letter-spacing="-1" transform="rotate(-2.5 192 34)">個人事業主専門！</text>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="form-anchor" style="position:relative;">
+      <!-- 吹き出しバッジ -->
+      <div class="form-badge">
+        <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+          <!-- 吹き出し本体（楕円＋しっぽ） -->
+          <ellipse cx="55" cy="50" rx="52" ry="48" fill="#FF6B2B"/>
+          <!-- しっぽ（左下向き） -->
+          <polygon points="20,85 8,108 42,90" fill="#FF6B2B"/>
+          <!-- 内枠（実線） -->
+          <ellipse cx="55" cy="50" rx="46" ry="42" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+          <!-- テキスト -->
+          <text x="55" y="34" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="1">かんたん</text>
+          <text x="55" y="62" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="30" font-weight="900" fill="#fff" letter-spacing="-1">1分</text>
+          <text x="55" y="80" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" font-size="12" font-weight="700" fill="rgba(255,255,255,0.9)">入力</text>
+        </svg>
+      </div>
+      <div class="fc-head">
+        <!-- 左側イラスト：請求書 -->
+        <div class="fc-deco fc-deco-left">
+          <svg width="52" height="58" viewBox="0 0 52 58" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="2" width="38" height="50" rx="4" fill="rgba(255,255,255,0.9)" stroke="var(--g400)" stroke-width="1.8"/>
+            <line x1="10" y1="14" x2="36" y2="14" stroke="var(--g400)" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="10" y1="21" x2="36" y2="21" stroke="var(--g300)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="10" y1="28" x2="30" y2="28" stroke="var(--g300)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="10" y1="35" x2="26" y2="35" stroke="var(--g300)" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="24" y="40" width="14" height="7" rx="2" fill="var(--g400)"/>
+            <text x="31" y="46" text-anchor="middle" font-size="5" font-weight="800" fill="#fff" font-family="sans-serif">&#165; 確定</text>
+            <!-- 折り目 -->
+            <path d="M38 2 L46 10 L38 10 Z" fill="var(--g100)" stroke="var(--g400)" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <h2>かんたん入力！<br class="sp-br"><span class="em">請求書買取</span>申込</h2>
+        <div class="fc-stats">
+          <div class="fcs"><span class="fn">即日</span><span class="fl">最短入金</span></div>
+          <div class="fcs"><span class="fn">45日</span><span class="fl">以内対象</span></div>
+          <div class="fcs"><span class="fn">2社間</span><span class="fl">通知なし</span></div>
+        </div>
+      </div>
+      <div class="fc-body">
+        <div class="f2">
+          <div class="fr">
+            <label>お名前<span class="req">必須</span></label>
+            <input type="text" name="name" placeholder="山田 太郎" autocomplete="name" required>
+          </div>
+          <div class="fr">
+            <label>屋号・会社名<span class="opt">任意</span></label>
+            <input type="text" name="company" placeholder="○○商事 / 屋号" style="border-color:var(--g100);">
+          </div>
+        </div>
+        <div class="f2">
+          <div class="fr">
+            <label>携帯電話<span class="req">必須</span></label>
+            <input type="tel" name="tel" placeholder="090-0000-0000" autocomplete="tel" required>
+          </div>
+          <div class="fr">
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" name="email" placeholder="mail@example.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="fr">
+          <label>事業形態<span class="req">必須</span></label>
+          <div class="rg">
+            <label><input type="radio" name="business" value="kojin" checked><span>個人事業主・フリーランス</span></label>
+            <label><input type="radio" name="business" value="hojin"><span>法人</span></label>
+          </div>
+        </div>
+        <div class="f2">
+          <div class="fr">
+            <label>買取希望金額<span class="req">必須</span></label>
+            <div class="aw">
+              <input type="text" name="amount" placeholder="300,000" id="amtInput" inputmode="numeric" required>
+              <span class="u">円</span>
+            </div>
+          </div>
+          <div class="fr">
+            <label>ご希望の入金日<span class="req">必須</span></label>
+            <input type="text" name="due_date" placeholder="例：今日中、〇月〇日まで など" required>
+          </div>
+        </div>
+        <div class="fr">
+          <label>ご相談内容・ご質問<span class="opt">任意</span></label>
+          <textarea name="message" placeholder="ご不明な点やご要望があればご記入ください" rows="3" style="resize:vertical;"></textarea>
+        </div>
+        <div class="pp-box">
+          <input type="checkbox" id="ppCheck">
+          <p><a id="ppOpen" href="#" style="color:var(--g500);font-weight:700;text-decoration:underline;cursor:pointer;">プライバシーポリシー</a>および<a id="termsOpen" href="#" style="color:var(--g500);font-weight:700;text-decoration:underline;cursor:pointer;">利用規約</a>に同意のうえ、上記内容を送信します。また、株式会社onfactより、本サービスに関するご案内、ファクタリング・資金調達に役立つ情報、関連サービスのご紹介等をメールにて受領することに同意します。配信停止はいつでも可能です。</p>
+        </div>
+        <button class="sbtn" id="sbtn" disabled>
+          <svg width="17" height="17" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          上記に同意して申込む
+        </button>
+        <p class="fnote">入力内容は査定・ご連絡以外には使用しません。<br>しつこい営業は一切行いません。<br>※給与ファクタリングは取り扱いません。</p>
+      </div>
+    </div>
+
+    <!-- サンキュー画面 -->
+    <div id="thanks-screen" style="display:none;">
+      <div class="thanks-inner">
+
+        <!-- STEP 1：完了 -->
+        <div id="thanks-step1-anchor" style="width:100%;max-width:440px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--g400);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+            <span style="font-size:11px;font-weight:700;color:var(--g500);letter-spacing:.06em;">お申込み完了</span>
+          </div>
+          <div style="background:var(--g50);border:1.5px solid var(--g100);border-radius:12px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <svg width="28" height="28" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+                <circle cx="26" cy="26" r="24" stroke="var(--g400)" stroke-width="2"/>
+                <path d="M15 26 L22 33 L37 18" stroke="var(--g400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p style="font-size:15px;font-weight:900;color:var(--gray900);margin:0;line-height:1.3;">お申込みありがとうございます。</p>
+            </div>
+            <p style="font-size:13px;font-weight:700;color:var(--gray700);margin:0 0 8px;line-height:1.5;">「<strong style="color:var(--g600);">必要書類</strong>」のメールを送信いたしました。</p>
+            <p style="font-size:11px;color:var(--gray500);margin:0;line-height:1.7;padding:8px 10px;background:var(--white);border-radius:6px;border:1px solid var(--g100);">※確認メールが届かない場合は、迷惑メールフォルダをご確認ください。携帯キャリアメール(ezweb / docomo / softbank)・iCloudをご利用の方は、<strong>support@onfact.jp</strong> の受信許可設定もあわせてご確認ください。</p>
+          </div>
+        </div>
+
+        <!-- 矢印 -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;margin:-4px 0;">
+          <div style="width:2px;height:16px;background:var(--gray300);"></div>
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M7 10 L0 0 L14 0 Z" fill="#C5C4BE"/></svg>
+        </div>
+
+        <!-- STEP 2：次のアクション -->
+        <div style="width:100%;max-width:440px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <div style="width:32px;height:32px;border-radius:50%;background:#FF6B2B;color:#fff;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+            <span style="font-size:13px;font-weight:700;color:#E07850;letter-spacing:.06em;">NEXT</span>
+          </div>
+          <div style="background:#FFF5F0;border:2px solid #FFCBB0;border-radius:12px;padding:20px 16px;">
+            <p style="font-size:26px;font-weight:900;color:var(--gray900);margin:0 0 8px;line-height:1.25;letter-spacing:-.5px;">請求書等の<br>必要書類を送る</p>
+            <p style="font-size:12px;color:var(--gray500);margin:0 0 16px;line-height:1.7;">LINEからお友達追加しても「<strong style="color:var(--gray700);">必要書類</strong>」の案内が届きます。</p>
+            <a id="lineCta" href="https://lin.ee/uA4xOl5" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:12px;background:#06C755;color:#fff;text-decoration:none;border-radius:14px;padding:18px 24px;font-size:17px;font-weight:900;font-family:inherit;box-shadow:0 6px 24px rgba(6,199,85,.4);border:3px solid #05B34C;width:100%;">
+              <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+                <rect width="40" height="40" rx="10" fill="white"/>
+                <path d="M20 8C13.37 8 8 12.92 8 19c0 4.32 2.74 8.1 6.85 10.24-.27.91-.87 3.21-1 3.71-.16.62.23.61.49.44.2-.13 3.14-2.12 4.42-2.98 1 .14 2.03.25 3.24.25 6.63 0 12-4.92 12-11S26.63 8 20 8z" fill="#06C755"/>
+                <path d="M15 19.5h10M15 16h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span style="line-height:1.5;text-align:left;"><span style="display:block;font-size:13px;font-weight:900;"><span style="background:#FF6B2B;color:#fff;padding:1px 8px;border-radius:5px;margin-right:4px;">今すぐ</span>LINEで</span><span style="display:block;font-size:22px;font-weight:900;letter-spacing:.02em;">書類を送信する</span></span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:auto;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- メール案内 -->
+        <p style="font-size:13px;color:var(--gray500);width:100%;max-width:440px;line-height:1.8;text-align:center;">メールで書類を送信希望のお客様は、<br>FACPORTからのメールをご参照ください。</p>
+
+        <!-- サブLINEボタン -->
+        <div class="thanks-line">
+          <p class="thanks-line-text">LINEからも友だち追加できます</p>
+          <a id="lineIcon" href="https://lin.ee/uA4xOl5" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;text-decoration:none;border-radius:8px;padding:10px 24px;font-size:15px;font-weight:900;font-family:inherit;">
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="white"/>
+              <path d="M20 8C13.37 8 8 12.92 8 19c0 4.32 2.74 8.1 6.85 10.24-.27.91-.87 3.21-1 3.71-.16.62.23.61.49.44.2-.13 3.14-2.12 4.42-2.98 1 .14 2.03.25 3.24.25 6.63 0 12-4.92 12-11S26.63 8 20 8z" fill="#06C755"/>
+            </svg>
+            LINE友達追加
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feats" id="feats-anchor" style="background:var(--gray50);">
+  <div class="sh">
+    <div class="ey">WHY FACPORT</div>
+    <h2>ファクポートが選ばれる理由</h2>
+  </div>
+  <div class="fg">
+    <div class="fc2">
+      <div class="fc2-illust"><svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="#fff" stroke="#C4E6B5" stroke-width="2"/>
+  <!-- 紙幣 -->
+  <rect x="18" y="38" width="56" height="32" rx="4" fill="none" stroke="#3D8A1E" stroke-width="2.2"/>
+  <rect x="22" y="42" width="48" height="24" rx="3" fill="#E8F5E2"/>
+  <circle cx="50" cy="54" r="8" fill="none" stroke="#3D8A1E" stroke-width="2"/>
+  <circle cx="50" cy="54" r="4" fill="#C4E6B5"/>
+  <line x1="26" y1="54" x2="38" y2="54" stroke="#3D8A1E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="62" y1="54" x2="70" y2="54" stroke="#3D8A1E" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- コイン -->
+  <ellipse cx="68" cy="42" rx="10" ry="10" fill="#fff" stroke="#3D8A1E" stroke-width="2"/>
+  <ellipse cx="68" cy="42" rx="6" ry="6" fill="#E8F5E2"/>
+  <ellipse cx="62" cy="47" rx="10" ry="10" fill="#fff" stroke="#3D8A1E" stroke-width="2"/>
+  <ellipse cx="62" cy="47" rx="6" ry="6" fill="#E8F5E2"/>
+  <!-- 上向き矢印 -->
+  <path d="M50 26 L50 16" stroke="#52A82B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M44 22 L50 16 L56 22" stroke="#52A82B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg></div>
+      <h3>最短即日・完全オンライン</h3>
+      <p>来店・郵送不要。スマホ1台で完結。審査後、最短当日中にご指定口座へ振込みます。</p>
+    </div>
+    <div class="fc2">
+      <div class="fc2-illust"><svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="#fff" stroke="#C4E6B5" stroke-width="2"/>
+  <!-- 人物A（左） -->
+  <circle cx="28" cy="34" r="8" fill="none" stroke="#3D8A1E" stroke-width="2"/>
+  <path d="M16 58 Q16 46 28 46 Q40 46 40 58" fill="none" stroke="#3D8A1E" stroke-width="2" stroke-linecap="round"/>
+  <!-- 人物B（右） -->
+  <circle cx="72" cy="34" r="8" fill="none" stroke="#3D8A1E" stroke-width="2"/>
+  <path d="M60 58 Q60 46 72 46 Q84 46 84 58" fill="none" stroke="#3D8A1E" stroke-width="2" stroke-linecap="round"/>
+  <!-- 中央シールド -->
+  <path d="M50 22 L62 27 L62 42 Q62 52 50 58 Q38 52 38 42 L38 27 Z" fill="#E8F5E2" stroke="#3D8A1E" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M44 40 L48 44 L56 36" stroke="#52A82B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- 矢印（左→シールド） -->
+  <path d="M40 40 L38 40" stroke="#52A82B" stroke-width="2" stroke-linecap="round"/>
+  <!-- 点線（シールド→右、通知なし） -->
+  <path d="M62 40 L65 40" stroke="#C4E6B5" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+  <line x1="68" y1="37" x2="74" y2="43" stroke="#E24B4A" stroke-width="2" stroke-linecap="round"/>
+  <line x1="74" y1="37" x2="68" y2="43" stroke="#E24B4A" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+      <h3>取引先に知られない</h3>
+      <p>2社間ファクタリング採用。取引先への通知・承諾は不要。大切な取引関係をそのまま守れます。</p>
+    </div>
+    <div class="fc2">
+      <div class="fc2-illust"><svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="#fff" stroke="#C4E6B5" stroke-width="2"/>
+  <!-- スマホ本体 -->
+  <rect x="33" y="20" width="34" height="60" rx="6" fill="none" stroke="#3D8A1E" stroke-width="2.2"/>
+  <rect x="36" y="26" width="28" height="42" rx="2" fill="#E8F5E2"/>
+  <!-- ホームボタン -->
+  <circle cx="50" cy="73" r="3" fill="none" stroke="#3D8A1E" stroke-width="1.8"/>
+  <!-- 画面内：チェックマーク -->
+  <circle cx="50" cy="46" r="10" fill="#52A82B"/>
+  <path d="M44 46 L48 50 L56 42" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- 吹き出し線 -->
+  <path d="M62 30 Q72 28 74 20" stroke="#C4E6B5" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="3 2"/>
+  <circle cx="74" cy="19" r="3" fill="#C4E6B5"/>
+  <!-- 電波 -->
+  <path d="M28 36 Q26 42 28 48" stroke="#C4E6B5" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M24 33 Q20 42 24 51" stroke="#C4E6B5" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg></div>
+      <h3>個人・フリーランス対応</h3>
+      <p>法人でなくてもOK。個人事業主・フリーランスの方の請求書買取に幅広く対応しています。</p>
+    </div>
+    <div class="fc2">
+      <div class="fc2-illust"><svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="#fff" stroke="#C4E6B5" stroke-width="2"/>
+  <!-- 天秤台 -->
+  <line x1="50" y1="30" x2="50" y2="72" stroke="#3D8A1E" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="30" y1="72" x2="70" y2="72" stroke="#3D8A1E" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 天秤棒 -->
+  <line x1="24" y1="40" x2="76" y2="40" stroke="#3D8A1E" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 左皿（書類） -->
+  <line x1="28" y1="40" x2="24" y2="54" stroke="#3D8A1E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="20" y1="54" x2="34" y2="54" stroke="#3D8A1E" stroke-width="2.2" stroke-linecap="round"/>
+  <rect x="20" y="46" width="14" height="10" rx="2" fill="#E8F5E2" stroke="#3D8A1E" stroke-width="1.5"/>
+  <line x1="22" y1="49" x2="32" y2="49" stroke="#3D8A1E" stroke-width="1" stroke-linecap="round"/>
+  <line x1="22" y1="52" x2="30" y2="52" stroke="#3D8A1E" stroke-width="1" stroke-linecap="round"/>
+  <!-- 右皿（チェック） -->
+  <line x1="72" y1="40" x2="76" y2="54" stroke="#3D8A1E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="66" y1="54" x2="80" y2="54" stroke="#3D8A1E" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="73" cy="48" r="6" fill="#52A82B"/>
+  <path d="M70 48 L72 51 L77 45" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- NO表示 -->
+  <text x="50" y="86" text-anchor="middle" font-size="9" font-weight="700" fill="#52A82B" font-family="sans-serif">負債ゼロ</text>
+</svg></div>
+      <h3>借入でなく負債にならない</h3>
+      <p>ファクタリングは売掛債権の売買です。融資・借入ではないため、負債が増えません。赤字決算でもご利用いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<div id="flow-anchor"></div>
+<section class="flow">
+  <div class="flow-in">
+    <div class="sh">
+      <div class="ey">HOW IT WORKS</div>
+      <h2 id="flow-title">申込から入金までの流れ</h2>
+    </div>
+    <div class="fsteps">
+      <div class="fstep">
+        <div class="fsl"><div class="fnum">1</div><div class="fline"></div></div>
+        <div class="fcon"><span class="ftag">所要1分</span><h3>オンライン申込み</h3><p>スマホ・PCから必要事項を入力。</p></div>
+      </div>
+      <div class="fstep">
+        <div class="fsl"><div class="fnum">2</div><div class="fline"></div></div>
+        <div class="fcon"><span class="ftag">所要5分</span><span class="line-badge" style="margin-left:6px;vertical-align:middle;"><svg viewBox="0 0 96 36" width="96" height="36" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="96" height="36" rx="7" fill="#fff" stroke="#06C755" stroke-width="2.5"/>
+                  <text x="48" y="14" text-anchor="middle" font-size="13" font-weight="900" fill="#06C755" font-family="sans-serif">LINE</text>
+                  <text x="48" y="29" text-anchor="middle" font-size="12" font-weight="800" fill="#06C755" font-family="sans-serif">対応</text>
+                </svg></span><h3>請求書とエビデンス（審査資料）のご提出</h3><p>請求書・通帳の写し・本人確認書類をPDF または スマホで撮影してアップロード。郵送・来店不要です。</p></div>
+      </div>
+      <div class="fstep">
+        <div class="fsl"><div class="fnum">3</div><div class="fline"></div></div>
+        <div class="fcon"><span class="ftag">最短60分</span><h3>審査・ご提案</h3><p>融資やカードの審査に落ちたことがあってもご利用可能です。</p></div>
+      </div>
+      <div class="fstep">
+        <div class="fsl"><div class="fnum">4</div><div class="fline"></div></div>
+        <div class="fcon"><span class="ftag">最短即日</span><h3>クラウド契約 → ご入金</h3><p>クラウド契約の締結後、ご指定の口座へ振込みます。取引先への通知は行いません。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq-anchor">
+  <div class="faq-in" style="position:relative;">
+    <div style="position:relative;">
+      <!-- Q&A＋四角を1つのSVGで右上に固定 -->
+      <div style="position:absolute;top:-8px;right:0;width:110px;height:110px;pointer-events:none;z-index:0;">
+        <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" width="110" height="110">
+          <!-- 後ろ：右上に傾いた四角（塗りなし） -->
+          <rect x="28" y="4" width="74" height="74" rx="6" fill="none" stroke="#C4E6B5" stroke-width="2" transform="rotate(10 65 41)"/>
+          <!-- 前：Q&Aボックス（左下、傾きなし） -->
+          <rect x="2" y="22" width="74" height="74" rx="6" fill="none" stroke="#C4E6B5" stroke-width="2"/>
+          <rect x="10" y="30" width="58" height="58" rx="4" fill="#E8F5E2" opacity=".75"/>
+          <!-- Q&Aテキスト：少し傾け -->
+          <text transform="rotate(-15 39 59)" x="39" y="66" text-anchor="middle"
+            font-family="'Noto Serif JP','Hiragino Mincho ProN',Georgia,serif"
+            font-size="24" font-weight="700" fill="#C4E6B5" letter-spacing="1">Q&amp;A</text>
+        </svg>
+      </div>
+      <div class="sh" style="text-align:center;margin-bottom:30px;position:relative;z-index:1;">
+        <div class="ey">FAQ</div>
+        <h2>よくあるご質問</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">個人事業主ですが、利用できますか。</div>
+        <div class="faq-a"><div class="faq-a-inner">はい、ご利用いただけます。個人事業主・フリーランスの方々を主要なご利用対象としており、屋号での事業活動実態があればお申込み可能です。法人格は必要ありません。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">買取の下限額はありますか。</div>
+        <div class="faq-a"><div class="faq-a-inner">買取希望額の下限は特に設けておりません。数万円単位の少額債権にも幅広く対応しています。まずはお気軽にご相談ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">取引先にファクタリングの利用が知られることはありませんか。</div>
+        <div class="faq-a"><div class="faq-a-inner">ありません。2社間で完結する契約形態を採用しており、お取引先への通知・承諾取得は一切行いません。お取引先との関係性に影響を与えることなくご利用いただけます。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">審査にはどれくらい時間がかかりますか。</div>
+        <div class="faq-a"><div class="faq-a-inner">書類がすべて揃っている場合、審査は最短60分で完了します。その日のうちにご入金までを目指しています。お急ぎの際はその旨をお申込みフォームにご記載ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">赤字決算や税金の滞納がありますが、利用できますか。</div>
+        <div class="faq-a"><div class="faq-a-inner">ファクタリングは売掛先の支払い能力を重視する審査のため、ご自身の財務状況や税金の状況はそれほど重要視されません。銀行融資が難しい方でもご利用いただけるケースが多くあります。まずはご相談ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">給与のファクタリングは対応していますか。</div>
+        <div class="faq-a"><div class="faq-a-inner">給与ファクタリングは貸金業にあたる違法行為となるため、当社では一切取り扱っておりません。事業者が保有する売掛債権のみを買取の対象としております。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>今すぐ無料相談・申込をする</h2>
+  <p>相談・見積りだけでもOK。しつこい営業は一切行いません。</p>
+  <a href="#form-anchor">無料で申込む・相談する</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:900px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:28px;">
+      <!-- ロゴ・キャッチ -->
+      <div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;">
+          <svg width="24" height="24" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 26 Q14 16 14 12" stroke="#7DC44A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M14 16 Q8 14 7 8 Q13 8 14 14" fill="#52A82B"/>
+            <path d="M14 13 Q20 10 22 4 Q16 5 14 12" fill="#9FD468"/>
+            <path d="M14 20 Q11 18 9 15" stroke="#7DC44A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div style="font-size:18px;font-weight:900;color:var(--g600);letter-spacing:.04em;">FACPORT</div>
+        </div>
+        <p style="font-size:11px;color:var(--gray500);line-height:1.7;">請求書買取・ファクタリングサービス<br>「ファクポート」は株式会社onfactが運営しています</p>
+      </div>
+      <!-- ナビ -->
+      <div style="display:flex;gap:40px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--gray300);letter-spacing:.1em;margin-bottom:10px;">MENU</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="#feats-anchor" style="font-size:12px;color:var(--gray500);text-decoration:none;">特徴</a>
+            <a href="#flow-anchor" style="font-size:12px;color:var(--gray500);text-decoration:none;">ご利用の流れ</a>
+            <a href="#faq-anchor" style="font-size:12px;color:var(--gray500);text-decoration:none;">よくある質問</a>
+            <a href="#form-anchor" style="font-size:12px;color:var(--gray500);text-decoration:none;">お申込み</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--gray300);letter-spacing:.1em;margin-bottom:10px;">COMPANY</div>
+          <div style="font-size:12px;color:var(--gray500);line-height:2.2;">
+            <div>株式会社onfact</div>
+            <div>〒141-0031　東京都品川区西五反田2-14-13</div>
+            <div>NICハイム五反田2階</div>
+            <div>TEL：<a href="tel:0368226499" style="color:var(--gray500);text-decoration:none;">03-6822-6499</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--gray100);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <p style="font-size:10px;color:var(--gray300);">&#169; 2020-2026 ファクポート（株式会社onfact）. All Rights Reserved.</p>
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button id="footerPPBtn" style="background:none;border:1px solid var(--gray100);border-radius:4px;color:var(--gray500);font-size:11px;padding:4px 12px;cursor:pointer;font-family:inherit;transition:all .2s;" onmouseover="this.style.borderColor='var(--g400)';this.style.color='var(--g500)'" onmouseout="this.style.borderColor='var(--gray100)';this.style.color='var(--gray500)'">プライバシーポリシー</button>
+        <button id="footerTermsBtn" style="background:none;border:1px solid var(--gray100);border-radius:4px;color:var(--gray500);font-size:11px;padding:4px 12px;cursor:pointer;font-family:inherit;transition:all .2s;" onmouseover="this.style.borderColor='var(--g400)';this.style.color='var(--g500)'" onmouseout="this.style.borderColor='var(--gray100)';this.style.color='var(--gray500)'">利用規約</button>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+</div>
+
+<script>
+  // 金額カンマ
+  const ai = document.getElementById('amtInput');
+  if(ai) ai.addEventListener('input', function(){
+    let v = this.value.replace(/[^\d]/g,'');
+    this.value = v ? parseInt(v).toLocaleString('ja-JP') : '';
+  });
+
+  // 同意チェック → 送信ボタン有効化
+  const ppCheck = document.getElementById('ppCheck');
+  const sbtn = document.getElementById('sbtn');
+  ppCheck.addEventListener('change', function(){
+    sbtn.disabled = !this.checked;
+  });
+
+  // 送信
+  sbtn.addEventListener('click', function(){
+    if(this.disabled) return;
+    var formData = new FormData();
+    formData.append('name', document.querySelector('input[name="name"]').value.trim());
+    formData.append('company', document.querySelector('input[name="company"]').value.trim());
+    formData.append('tel', document.querySelector('input[name="tel"]').value.trim());
+    formData.append('email', document.querySelector('input[name="email"]').value.trim());
+    formData.append('business', document.querySelector('input[name="business"]:checked').value);
+    formData.append('amount', document.querySelector('input[name="amount"]').value.trim());
+    formData.append('due_date', document.querySelector('input[name="due_date"]').value.trim());
+    formData.append('message', document.querySelector('textarea[name="message"]').value.trim());
+    formData.append('page_url', window.location.href);
+    this.disabled = true;
+    var btn = this;
+    fetch('mail.php', { method: 'POST', body: formData })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(!data.success){
+          alert('送信に失敗しました。お手数ですが再度お試しください。');
+          btn.disabled = false;
+          return;
+        }
+        document.querySelector('.fc-body').style.display = 'none';
+        document.querySelector('.fc-head').style.display = 'none';
+        document.querySelector('.form-badge').style.display = 'none';
+        var t = document.getElementById('thanks-screen');
+        t.style.display = 'block';
+        setTimeout(function(){
+          var header = document.querySelector('header');
+          var headerH = header ? header.offsetHeight : 64;
+          var banner = document.getElementById('thanks-step1-anchor');
+          if(!banner) return;
+          var rect = banner.getBoundingClientRect();
+          var top = window.pageYOffset + rect.top - headerH - (window.innerHeight - headerH - rect.height) / 2;
+          window.scrollTo({top: Math.max(0, top), behavior: 'smooth'});
+        }, 50);
+        window._thanks = true;
+        window.addEventListener('beforeunload', function(e){
+          if(window._thanks){ e.preventDefault(); e.returnValue = ''; }
+        });
+      })
+      .catch(function(){
+        alert('送信に失敗しました。通信環境をご確認のうえ再度お試しください。');
+        btn.disabled = false;
+      });
+  });
+
+  // モーダルを開く（閉じるはHTML側のonclickで処理）
+  function openModal(id){
+    var el = document.getElementById(id);
+    if(el) el.style.display = 'flex';
+  }
+
+  // フォーム内リンク
+  var ppOpenLink = document.getElementById('ppOpen');
+  if(ppOpenLink) ppOpenLink.addEventListener('click', function(e){ e.preventDefault(); openModal('ppModal'); });
+  var termsOpenLink = document.getElementById('termsOpen');
+  if(termsOpenLink) termsOpenLink.addEventListener('click', function(e){ e.preventDefault(); openModal('termsModal'); });
+
+  // フッターボタン
+  var fPP = document.getElementById('footerPPBtn');
+  var fTM = document.getElementById('footerTermsBtn');
+  if(fPP) fPP.addEventListener('click', function(){ openModal('ppModal'); });
+  if(fTM) fTM.addEventListener('click', function(){ openModal('termsModal'); });
+
+  // モーダル外枠クリックで閉じる
+  ['ppModal','termsModal'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('click', function(e){
+      var box = el.querySelector('div');
+      var r = box.getBoundingClientRect();
+      if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom){
+        el.style.display = 'none';
+      }
+    });
+  });
+
+  // ハンバーガーメニュー
+  var hbg = document.getElementById('hamburger');
+  var drw = document.getElementById('drawer');
+  var dov = document.getElementById('drawerOverlay');
+  if(hbg){
+    hbg.addEventListener('click', function(){
+      hbg.classList.toggle('open');
+      drw.classList.toggle('open');
+      dov.classList.toggle('open');
+    });
+    dov.addEventListener('click', function(){
+      hbg.classList.remove('open');
+      drw.classList.remove('open');
+      dov.classList.remove('open');
+    });
+    drw.querySelectorAll('.drawer-link').forEach(function(a){
+      a.addEventListener('click', function(){
+        hbg.classList.remove('open');
+        drw.classList.remove('open');
+        dov.classList.remove('open');
+      });
+    });
+  }
+
+  // LINEボタンクリック時は離脱警告を出さない
+  var lineCtaBtn = document.getElementById('lineCta');
+  if(lineCtaBtn){
+    lineCtaBtn.addEventListener('click', function(){
+      window._thanks = false;
+    });
+  }
+  var lineIconBtn = document.getElementById('lineIcon');
+  if(lineIconBtn){
+    lineIconBtn.addEventListener('click', function(){
+      window._thanks = false;
+    });
+  }
+
+  // FAQ開閉
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      q.parentElement.classList.toggle('open');
+    });
+  });
+
+  // スムーススクロール
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var t = document.querySelector(this.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    });
+  });
+</script>
+</body>
+</html</div>
+</div>
+
+<div id="ppModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;padding:20px;">
+  <div style="background:#fff;border-radius:16px;max-width:540px;width:100%;max-height:82vh;display:flex;flex-direction:column;margin:auto;position:relative;top:50%;transform:translateY(-50%);" onclick="event.stopPropagation()">
+    <div style="padding:14px 20px;border-bottom:1px solid #EFEFEB;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <h3 style="font-size:15px;font-weight:800;color:#1A1A18;">プライバシーポリシー</h3>
+      <button onclick="document.getElementById('ppModal').style.display='none'" style="background:none;border:none;cursor:pointer;font-size:24px;color:#888;line-height:1;padding:4px 8px;border-radius:6px;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='none'">&times;</button>
+    </div>
+    <div style="padding:20px 24px;overflow-y:auto;flex:1;font-size:13px;line-height:1.85;color:#444441;">
+
+      <p>株式会社onfact（以下「当社」）は、お客様の個人情報の保護を重要な責務と考え、以下の方針に基づき適切に取り扱います。</p>
+      <h4>1. 収集する情報</h4>
+      <p>当社は、本サービスの提供にあたり、お名前・屋号・会社名・電話番号・メールアドレス・事業内容・買取希望金額その他お客様が入力された情報を収集します。</p>
+      <h4>2. 利用目的</h4>
+      <ul>
+        <li>ファクタリングサービスの審査・提供およびご連絡</li>
+        <li>本サービスに関するご案内・お知らせの送付</li>
+        <li>ファクタリング・資金調達に役立つ情報のメール配信</li>
+        <li>関連サービスのご紹介</li>
+      </ul>
+      <h4>3. 第三者提供</h4>
+      <p>お客様の同意がある場合、法令に基づく場合を除き、個人情報を第三者に提供しません。</p>
+      <h4>4. 安全管理</h4>
+      <p>個人情報の漏洩・滅失・毀損を防止するため、適切な安全管理措置を講じます。</p>
+      <h4>5. 開示・訂正・削除</h4>
+      <p>ご自身の個人情報の開示・訂正・削除をご請求いただけます。下記までご連絡ください。</p>
+      <h4>6. メール配信停止</h4>
+      <p>受信したメール内の配信停止リンク、または下記お問い合わせ先へのご連絡により、いつでも停止できます。</p>
+      <h4>7. お問い合わせ</h4>
+      <p>株式会社onfact　個人情報担当<br>TEL：03-6822-6499</p>
+      <h4>8. 改定</h4>
+      <p>本ポリシーは法令改正等に応じて改定することがあります。</p>
+      <p class="updated">制定日：2020年5月10日　最終改定日：2026年4月20日　株式会社onfact</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="termsModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;padding:20px;">
+  <div style="background:#fff;border-radius:16px;max-width:540px;width:100%;max-height:82vh;display:flex;flex-direction:column;margin:auto;position:relative;top:50%;transform:translateY(-50%);" onclick="event.stopPropagation()">
+    <div style="padding:14px 20px;border-bottom:1px solid #EFEFEB;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <h3 style="font-size:15px;font-weight:800;color:#1A1A18;">利用規約</h3>
+      <button onclick="document.getElementById('termsModal').style.display='none'" style="background:none;border:none;cursor:pointer;font-size:24px;color:#888;line-height:1;padding:4px 8px;border-radius:6px;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='none'">&times;</button>
+    </div>
+    <div style="padding:20px 24px;overflow-y:auto;flex:1;font-size:13px;line-height:1.85;color:#444441;">
+
+      <p>本利用規約（以下「本規約」）は、株式会社onfact（以下「当社」）が提供するファクタリングサービス「ファクポート」の利用条件を定めるものです。</p>
+      <h4>第1条 適用</h4>
+      <p>本規約は、本サービスの利用に関して、当社と利用者との間に適用されます。利用者は本規約に同意した上で本サービスを利用するものとします。</p>
+      <h4>第2条 サービスの内容</h4>
+      <p>本サービスは、利用者が保有する売掛債権（請求書）を当社が買い取ることにより売買代金を支払うものであり、貸付ではありません。2社間ファクタリングの形態をとり、取引先への通知は原則として行いません。</p>
+      <h4>第3条 利用条件</h4>
+      <ul>
+        <li>日本国内で事業を営む個人事業主または法人であること</li>
+        <li>申込時点で満18歳以上であること</li>
+        <li>本人確認書類を提出できること</li>
+        <li>反社会的勢力に該当しないこと</li>
+        <li>給与債権等、当社が買取対象外と定める債権でないこと</li>
+      </ul>
+      <h4>第4条 申込みおよび審査</h4>
+      <p>当社は申込内容を審査の上、買取の可否・金額・手数料を決定し利用者に通知します。合理的な理由がある場合、申込みをお断りすることがあります。</p>
+      <h4>第5条 手数料</h4>
+      <p>手数料は買取金額・売掛先の信用状況等を勘案して個別に算定し、契約締結前に利用者へ提示します。</p>
+      <h4>第6条 利用者の義務</h4>
+      <ul>
+        <li>申込時に提供する情報が真実かつ正確であること</li>
+        <li>譲渡対象となる債権が真正に存在し、超過に値する二重譲渡や担保設定がないこと</li>
+        <li>売掛先から入金があった場合、速やかに当社に連絡し引き渡すこと</li>
+      </ul>
+      <h4>第7条 禁止事項</h4>
+      <ul>
+        <li>虚偽の情報・架空の請求書を提供する行為</li>
+        <li>既に他社に譲渡された債権を申し込む行為</li>
+        <li>給与債権その他法令により譲渡が制限される債権を申し込む行為</li>
+        <li>反社会的勢力との関わりが疑われる行為</li>
+      </ul>
+      <h4>第8条 準拠法および管轄</h4>
+      <p>本規約は日本法に準拠します。紛争については東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+      <p class="updated">制定日：2020年5月10日　最終改定日：2026年4月20日</p>
+   
+    </div>
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+
+  </div>
+</div>
+
+
+</body>
+</html</div>
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+
+  </div>
+</div>
+
+
+</body>
+</html>
